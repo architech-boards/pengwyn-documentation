@@ -22,7 +22,7 @@ Installing the software
 
 1. run **VirtualBox** and start Pengwyn Yocto virtual machine
 
-2. download the display patch (ref. `linux-pengwyn_3.2.display.patch.tar.gz <http://www.architechboards.com/pengwyn/updates/linux-pengwyn_3.2.display.patch.tar.gz>`_ ) and save the file to **/home/pengwyn** folder
+2. download the display patch (ref. `linux-pengwyn_3.2.display.patch.tar.gz <http://downloads.architechboards.com/pengwyn/updates/linux-pengwyn_3.2.display.patch.tar.gz>`_ ) and save the file to **/home/pengwyn** folder
 
 3. open terminal and decompress patch
 
