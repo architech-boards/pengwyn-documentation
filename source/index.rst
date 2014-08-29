@@ -6,6 +6,10 @@
 Welcome to Pengwyn's documentation!
 ===================================
 
+:Version: 0.0.1A
+:Copyright: Architech
+:Date: 06/11/13
+
 .. image:: _static/pengwyn.png
    :width: 70%
 
