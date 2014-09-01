@@ -10,6 +10,8 @@ Welcome to Pengwyn SDK's documentation!
 :Copyright: Architech
 :Date: 06/11/13
 
+This documentation is old, you can find the last release: `Here <http://architechboards-pengwyn.readthedocs.org>`_
+
 .. image:: _static/pengwyn.png
    :width: 70%
 
