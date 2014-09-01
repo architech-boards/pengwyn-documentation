@@ -1,0 +1,548 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Quick start guide &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="FAQ" href="faq.html" />
+    <link rel="prev" title="How to add 3”5 display with touch screen" href="touch.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="faq.html" title="FAQ">next</a>
+              <li><a href="touch.html" title="How to add 3”5 display with touch screen">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#installing-the-virtual-machine">Installing the Virtual Machine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download-virtualbox">Download VirtualBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-new-virtual-machine">Create a new Virtual Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-the-network">Setup the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customize-the-number-of-processors">Customize the number of processors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-shared-folder">Create a shared folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-welcome-screen">The welcome screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#let-s-build-the-system">Let&#8217;s build the system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-your-sd-card">Create your SD card</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-your-first-application-on-pengwyn-board">Run your first Application on Pengwyn board!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-project">Building the Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploying-and-debugging-the-application">Deploying and Debugging the Application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="quick-start-guide">
+<span id="quick"></span><h1>Quick start guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this headline">¶</a></h1>
+<p>This document will guide you from importing the virtual machine to the debugging of an Hello World! example on a customized Linux distribution that you will generate with the Yocto toolchain.</p>
+</div>
+<div class="section" id="installing-the-virtual-machine">
+<h1>Installing the Virtual Machine<a class="headerlink" href="#installing-the-virtual-machine" title="Permalink to this headline">¶</a></h1>
+<p>The development environment is provided as a virtual disk (to be used by a VirtualBox virtual machine)
+which you can download from this page:</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><a class="reference external" href="http://downloads.architechboards.com/sdk/virtual_machine/download.html">http://downloads.architechboards.com/sdk/virtual_machine/download.html</a></p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Compute the MD5SUM value of the zip file you downloaded and compare it to the golden one you find in the download page.</p>
+</div>
+<p>Uncompress the file, and you will get a <em>.vdi</em> file that is our virtual disk image.
+The environment contains the SDK for all the boards provided by Architech, Pengwyn included.</p>
+<div class="section" id="download-virtualbox">
+<h2>Download VirtualBox<a class="headerlink" href="#download-virtualbox" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/vdi_virtualbox_logo.png" class="align-left" src="_images/vdi_virtualbox_logo.png" />
+<p>For being able to use it, you first need to install <strong>VirtualBox</strong> (version 4.2.10 or higher).
+You can get VirtualBox installer from here:</p>
+<p><a class="reference external" href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
+<p>Download the version that suits your host operating system. You need to download and install the <strong>Extension Pack</strong> as well.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Make sure that the extension pack has the same version of VirtualBox.</p>
+</div>
+<p>Install the software with all the default options.</p>
+</div>
+<div class="section" id="create-a-new-virtual-machine">
+<h2>Create a new Virtual Machine<a class="headerlink" href="#create-a-new-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Run VirtualBox</li>
+</ol>
+<img alt="_images/vdi_open_virtualbox.png" class="align-center" src="_images/vdi_open_virtualbox.png" />
+<ol class="arabic simple" start="2">
+<li>Click on <em>New</em> button</li>
+</ol>
+<img alt="_images/vdi_new_virtual_machine.png" class="align-center" src="_images/vdi_new_virtual_machine.png" />
+<ol class="arabic simple" start="3">
+<li>Select the name of the virtual machine and the operating system type</li>
+</ol>
+<img alt="_images/vdi_virtual_machine_name.png" class="align-center" src="_images/vdi_virtual_machine_name.png" />
+<ol class="arabic simple" start="4">
+<li>Select the amount of memory you want to give to your new virtual machine</li>
+</ol>
+<img alt="_images/vdi_virtual_machine_memory.png" class="align-center" src="_images/vdi_virtual_machine_memory.png" />
+<ol class="arabic simple" start="5">
+<li>Make the virtual machine use Architech&#8217;s virtual disk by pointing to the downloaded file. Than click on <em>Create</em>.</li>
+</ol>
+<img alt="_images/vdi_hard_drive.png" class="align-center" src="_images/vdi_hard_drive.png" />
+</div>
+<div class="section" id="setup-the-network">
+<h2>Setup the network<a class="headerlink" href="#setup-the-network" title="Permalink to this headline">¶</a></h2>
+<p>We need to setup a port forwarding rule to let you (later) use the virtual machine as a local repository of packages.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The virtual machine must be off</p>
+</div>
+<ol class="arabic simple">
+<li>Select Architech&#8217;s virtual machine from the list of virtual machines</li>
+</ol>
+<img alt="_images/vdi_machine_listed.png" class="align-center" src="_images/vdi_machine_listed.png" />
+<ol class="arabic simple" start="2">
+<li>Click on <em>Settings</em></li>
+</ol>
+<img alt="_images/vdi_click_settings.png" class="align-center" src="_images/vdi_click_settings.png" />
+<ol class="arabic simple" start="3">
+<li>Select <em>Network</em></li>
+</ol>
+<img alt="_images/vdi_network.png" class="align-center" src="_images/vdi_network.png" />
+<ol class="arabic simple" start="4">
+<li>Expand <em>Advanced</em> of <em>Adapter 1</em></li>
+</ol>
+<img alt="_images/vdi_network_nat_advanced.png" class="align-center" src="_images/vdi_network_nat_advanced.png" />
+<ol class="arabic simple" start="5">
+<li>Click on <em>Port Forwarding</em></li>
+</ol>
+<img alt="_images/vdi_network_nat_port_forwarding.png" class="align-center" src="_images/vdi_network_nat_port_forwarding.png" />
+<ol class="arabic simple" start="6">
+<li>Add a new <em>rule</em></li>
+</ol>
+<img alt="_images/vdi_network_nat_port_forwarding_rule_add.png" class="align-center" src="_images/vdi_network_nat_port_forwarding_rule_add.png" />
+<ol class="arabic simple" start="7">
+<li>Configure the <em>rule</em></li>
+</ol>
+<img alt="_images/vdi_network_nat_port_forwarding_rule_added.png" class="align-center" src="_images/vdi_network_nat_port_forwarding_rule_added.png" />
+<ol class="arabic simple" start="8">
+<li>Click on <em>Ok</em></li>
+</ol>
+</div>
+<div class="section" id="customize-the-number-of-processors">
+<h2>Customize the number of processors<a class="headerlink" href="#customize-the-number-of-processors" title="Permalink to this headline">¶</a></h2>
+<p>Building an entire system from the ground up is a business that can take up to several hours.
+To improve the performances of the overall build process, you can, if your computer has enough resources, assign more than one
+processor to the virtual machine.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The virtual machine must be off</p>
+</div>
+<ol class="arabic simple">
+<li>Select Architech&#8217;s virtual machine from the list of virtual machines</li>
+</ol>
+<img alt="_images/vdi_machine_listed.png" class="align-center" src="_images/vdi_machine_listed.png" />
+<ol class="arabic simple" start="2">
+<li>Click on <em>Settings</em></li>
+</ol>
+<img alt="_images/vdi_click_settings.png" class="align-center" src="_images/vdi_click_settings.png" />
+<ol class="arabic simple" start="3">
+<li>Select <em>System</em></li>
+<li>Select <em>Processor</em></li>
+<li>Assign the number of processors you wish to assign to the virtual machine</li>
+</ol>
+<img alt="_images/vdi_change_number_of_processors.png" class="align-center" src="_images/vdi_change_number_of_processors.png" />
+<p>If you changed the number of processors, you might want to consider reading the guides on how to speedup the build process for <a class="reference internal" href="poky.html#pokyspeedup"><em>Poky</em></a> and <a class="reference internal" href="hob.html#hobspeedup"><em>HOB</em></a>.</p>
+</div>
+<div class="section" id="create-a-shared-folder">
+<h2>Create a shared folder<a class="headerlink" href="#create-a-shared-folder" title="Permalink to this headline">¶</a></h2>
+<p>A shared folder is way for host and guest operating systems to exchange files by means of the file system.
+You need to choose a directory on your host operating system to share with the guest operating system.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The virtual machine must be off</p>
+</div>
+<ol class="arabic simple">
+<li>Select Architech&#8217;s virtual machine from the list of virtual machines</li>
+</ol>
+<img alt="_images/vdi_machine_listed.png" class="align-center" src="_images/vdi_machine_listed.png" />
+<ol class="arabic simple" start="2">
+<li>Click on <em>Settings</em></li>
+</ol>
+<img alt="_images/vdi_click_settings.png" class="align-center" src="_images/vdi_click_settings.png" />
+<ol class="arabic simple" start="3">
+<li>Select <em>Shared Folders</em></li>
+<li>Add a new shared folder</li>
+</ol>
+<img alt="_images/vdi_add_shared_folder.png" class="align-center" src="_images/vdi_add_shared_folder.png" />
+<ol class="arabic simple" start="5">
+<li>Choose a directory to share on your host machine. Make sure <em>Auto-mount</em> is selected.</li>
+</ol>
+<img alt="_images/vdi_new_shared_folder.png" class="align-center" src="_images/vdi_new_shared_folder.png" />
+<p>Once the virtual machine has been booted, the shared folder will be mounted under <em>/media/</em> directory inside the virtual machine.</p>
+</div>
+<div class="section" id="the-welcome-screen">
+<h2>The welcome screen<a class="headerlink" href="#the-welcome-screen" title="Permalink to this headline">¶</a></h2>
+<p>The splash screen application has been designed to facilitate the access to the boards tools. It can be opened by clicking on its <em>Desktop</em> icon.</p>
+<img alt="_images/run_architech.jpg" src="_images/run_architech.jpg" />
+<p>Once started, you can can choose if you want to work with Architech’s boards or with partners’ ones. For Pengwyn, choose <strong>ArchiTech</strong>.</p>
+<img alt="_images/welcomeScreen.jpg" src="_images/welcomeScreen.jpg" />
+<p>A list of all available Architech’s boards will open, select Pengwyn.</p>
+<img alt="_images/selectBoard.jpg" src="_images/selectBoard.jpg" />
+<p>A list of actions related to Pengwyn that can be activated will appear.</p>
+<img alt="_images/listAction.jpg" src="_images/listAction.jpg" />
+</div>
+<div class="section" id="let-s-build-the-system">
+<h2>Let&#8217;s build the system<a class="headerlink" href="#let-s-build-the-system" title="Permalink to this headline">¶</a></h2>
+<p>First of all you need to build a system, in this section you will build a predefined Linux image.</p>
+<p>By clicking <strong>Run hob</strong> you will launch HOB.</p>
+<img alt="_images/run_hob.jpg" src="_images/run_hob.jpg" />
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>To run HOB you need a working Internet connection.
+If internet connection doesn&#8217;t work you have to follow this instructions:</p>
+<ol class="arabic simple">
+<li>Click with the right button of the mouse on the ethernet icon on the top right of the screen</li>
+<li>Select <strong>Edit Connections...</strong></li>
+</ol>
+<img alt="_images/ip-1.png" src="_images/ip-1.png" />
+<ol class="arabic simple" start="3">
+<li>In the wired tab select &#8220;wired connection&#8221; and press <strong>Edit</strong> button</li>
+<li>With another PC go to this web page: <strong>http://www.opendns.com/opendns-ip-addresses</strong> and copy the two IPs</li>
+<li>Go in the <strong>IPv4 Settings</strong> tab and write in <strong>DNS Servers</strong> text box the two IPs that you have copied</li>
+</ol>
+<p class="last">If required the sudo password is <strong>pengwyn</strong></p>
+</div>
+<p>Select <strong>pengwyn</strong> as current machine from the drop-down menu.</p>
+<img alt="_images/hob-pengwyn-selection.jpg" src="_images/hob-pengwyn-selection.jpg" />
+<p>Select <strong>core-image-minimal-dev</strong> as base image.</p>
+<img alt="_images/hob-minimal-dev-selection.jpg" src="_images/hob-minimal-dev-selection.jpg" />
+<p>Click on <strong>Build image</strong> button.</p>
+<img alt="_images/hob-minimal-dev-build.jpg" src="_images/hob-minimal-dev-build.jpg" />
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The build process can last hours.</p>
+</div>
+<p>Wait until it finishes.</p>
+<img alt="_images/hob-minimal-dev-completed.png" src="_images/hob-minimal-dev-completed.png" />
+<p>At the end of the build the images will be automatically saved in <em>/home/pengwyn/yocto/build/tmp/deploy/images</em> folder.</p>
+</div>
+<div class="section" id="create-your-sd-card">
+<h2>Create your SD card<a class="headerlink" href="#create-your-sd-card" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">You must have an SD card reader/programmer to build the SD card.
+The SD card must be at the least 1GB size.
+VirtualBox will see only USB connected SD card reader/programmer. This guide will assume you have a USB device for such a purpose.</p>
+</div>
+<p>To create your SD card, please follow these steps:</p>
+<ul class="simple">
+<li>Connect your SD card reader to your computer than to the virtual machine, from VirtualBox menu select Devices → USB Devices → &#8220;your SDcard reader&#8221;.</li>
+<li>Insert the SD card into the adapter (in this example we are inserting an SD card already partitioned with a FAT and an EXT2 partition, that is the basic configuration for the Pengwyn board).</li>
+<li>Download the tool scripts (download link <a class="reference external" href="_static/pengwyn-tools.tar.bz2">pengwyn-tools.tar.bz2</a>) and decompress in a folder. eg:</li>
+</ul>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'quick_rst-host-111' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="quick_rst-host-111" class="language-markup">tar -jxf pengwyn-tools.tar.bz2 -C /home/architech/Desktop</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>Run the following command</li>
+</ul>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'quick_rst-host-112' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="quick_rst-host-112" class="language-markup">~$ sudo fdisk -l
+
+Disk /dev/sdb: 1971 MB, 1971322880 bytes
+255 heads, 63 sectors/track, 239 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x9bfa2153
+
+Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1   *           1           9       72261    c  W95 FAT32 (LBA)
+/dev/sdb2              11         239     1839442+  83  Linux</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>Find the device name from fdisk command output, in this example is <strong>/dev/sdb</strong>.</li>
+<li>Run the script that will prepare the SD card with all the needed files (sudo password: <strong>architech</strong>)</li>
+</ul>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'quick_rst-host-113' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="quick_rst-host-113" class="language-markup">cd /home/architech/Desktop/pengwyn-tools
+sudo ./fast-create-sdcard.sh</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><div class="line-block">
+<div class="line">When the script starts asks for the <span class="target" id="index-0"></span>sudo password, type <strong>architech</strong> followed by enter-key.</div>
+<div class="line">The list of available devices will be shown: the SD card should be the number <strong>1</strong> of the list with name sdb. Check the size shown on the table to be sure that the device is the correct one. Enter the device number <strong>1</strong> followed by enter-key.</div>
+</div>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'quick_rst-host-114' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="quick_rst-host-114" class="language-markup">+------------------------------------------------------------------------------+
+|                                                                              |
+| This script will create a bootable SD card.                                  |
+| The script must be run with root permissions.                                |
+|                                                                              |
++------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+| LIST OF AVAILABLE DRIVES:                                                    |
++------------------------------------------------------------------------------+
+
+#  major   minor    size   name
+1:   8       16    1927168 sdb
+
+Enter Device Number #:</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><div class="line-block">
+<div class="line">The script will create two partitions on the SD card: the first one is a <strong>FAT32</strong> with the <strong>boot files</strong>, the second one is an <strong>ext3</strong> with the <strong>target file system</strong>.</div>
+<div class="line">The operations will take few minutes.</div>
+</div>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'quick_rst-host-115' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="quick_rst-host-115" class="language-markup">+------------------------------------------------------------------------------+
+|                                                                              |
+| This script will create a bootable SD card.                                  |
+| The script must be run with root permissions.                                |
+|                                                                              |
++------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+| LIST OF AVAILABLE DRIVES:                                                    |
++------------------------------------------------------------------------------+
+
+#  major   minor    size   name
+1:   8       16    1927168 sdb
+
+Enter Device Number #: 1
+
+sdb was selected
+
+sdb1  sdb2
+72261 1839442
+
+Mount the partitions
+Emptying partitions
+Syncing....
+
++------------------------------------------------------------------------------+
+|      Copying files now... will take minutes                                 |
++------------------------------------------------------------------------------+
+
+Copying boot partition
+Copying file system partition
+Copying modules
+Syncing....
+Un-mount the partitions
+Remove created temp directories
+Operation Finished
+
+Press ENTER to finish</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>Remove the SDcard</li>
+</ul>
+</div>
+<div class="section" id="run-your-first-application-on-pengwyn-board">
+<h2>Run your first Application on Pengwyn board!<a class="headerlink" href="#run-your-first-application-on-pengwyn-board" title="Permalink to this headline">¶</a></h2>
+<p>Launch Eclipse using Architech Splashscreen just click on <strong>Develop with Eclipse</strong>.</p>
+<img alt="_images/run_eclipse.jpg" src="_images/run_eclipse.jpg" />
+<p>To create a project based on a Yocto template and then display the source code, follow these steps:</p>
+<ul class="simple">
+<li>Select File→New→Project...</li>
+<li>Under <em>C/C++</em>, double click on <em>C Project</em> to create the project.</li>
+<li>Expand <em>Yocto ADT Project</em>.</li>
+<li>Select <em>Hello World ANSI C Autotools Project</em>. This is an Autotools-based project based on a Yocto Project template.</li>
+</ul>
+<img alt="_images/newproject.jpg" src="_images/newproject.jpg" />
+<ul class="simple">
+<li>Put a name in the Project <em>name:</em> field. Do not use hyphens as part of the name.</li>
+<li>Click <em>Next</em>.</li>
+<li>Add information in the <em>Author</em> and <em>Copyright</em> notice fields.</li>
+<li>Be sure the <em>License</em> field is correct.</li>
+<li>Click <em>Finish</em>.</li>
+</ul>
+<p><strong>Note:</strong> If the &#8220;open perspective&#8221; prompt appears, click <em>Yes</em> so that you enter in the C/C++ perspective.
+The left-hand navigation pane shows your project. You can display your source by double clicking the project&#8217;s source file.</p>
+<img alt="_images/projectexplorer.jpg" src="_images/projectexplorer.jpg" />
+</div>
+<div class="section" id="building-the-project">
+<h2>Building the Project<a class="headerlink" href="#building-the-project" title="Permalink to this headline">¶</a></h2>
+<p>To build the project, select Project→Build Project. The console should update with messages from the cross-compiler.
+To add more libraries to compile:</p>
+<ul class="simple">
+<li>Click on Project→Properties.</li>
+<li>Expand the box next to Autotools.</li>
+<li>Select Configure Settings.</li>
+<li>In CFLAGS field, you can add the path of includes with -Ipath_include</li>
+<li>In LDFLAGS field, you can specify the libraries you use with -lname_library and you can also specify the path where to look for libraries with -Lpath_library</li>
+</ul>
+<p><strong>Note:</strong> All libraries are located in <em>~/architech_sdk/architech/pengwyn/sysroot</em> subdirectories.</p>
+<img alt="_images/autotools.jpg" src="_images/autotools.jpg" />
+</div>
+<div class="section" id="deploying-and-debugging-the-application">
+<span id="index-1"></span><h2>Deploying and Debugging the Application<a class="headerlink" href="#deploying-and-debugging-the-application" title="Permalink to this headline">¶</a></h2>
+<p>Connect the Pengwyn board to the PC by means of a usb cable to power the board and to have the serial console</p>
+<img alt="_images/pengwyn-power.jpg" src="_images/pengwyn-power.jpg" />
+<p>Once you built the project and the board is running the image, use minicom (refer to section <a class="reference internal" href="remote.html#usbserial"><em>Usb-Serial</em></a> to know how to configure minicom) to run <strong>tcf-agent</strong> program in target board:</p>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'quick_rst-board-191' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="quick_rst-board-191" class="language-markup">Yocto (Built by Poky 7.0.1) 1.2.1
+ ttyO0
+
+pengwyn login: root
+root@pengwyn:~# ifconfig eth0 192.168.0.10</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Test the ethernet:</p>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'quick_rst-board-192' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="quick_rst-board-192" class="language-markup">ping 192.168.0.100</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>If the output is similar to this one:</p>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'quick_rst-board-193' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="quick_rst-board-193" class="language-markup">64 bytes from 192.168.0.100: icmp_req=1 ttl=64 time=0.946 ms
+64 bytes from 192.168.0.100: icmp_req=2 ttl=64 time=0.763 ms
+64 bytes from 192.168.0.100: icmp_req=3 ttl=64 time=0.671 ms
+64 bytes from 192.168.0.100: icmp_req=4 ttl=64 time=0.793 ms</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>the ethernet connection is ok, then run command:</p>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'quick_rst-board-194' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="quick_rst-board-194" class="language-markup">/etc/init.d/tcf-agent restart</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>On the Host machine, follow these steps to let <strong>Eclipse</strong> deploy and debug your application:</p>
+<ul class="simple">
+<li>Select <em>Remote System Explorer</em> perspective.</li>
+</ul>
+<img alt="_images/tcf.jpg" src="_images/tcf.jpg" />
+<ul class="simple">
+<li>In <em>Remote System</em> area right-click TCF icon and select <em>Property</em>.</li>
+</ul>
+<img alt="_images/tcf2.jpg" src="_images/tcf2.jpg" />
+<ul class="simple">
+<li>In <em>Host</em> tab, insert in <em>Host Name</em> and <em>Connection Name</em> fields the IP address of the target board. (e.g. 192.168.0.10)</li>
+</ul>
+<img alt="_images/tcf3.jpg" src="_images/tcf3.jpg" />
+<ul class="simple">
+<li>Then press <em>OK</em>.</li>
+<li>Select Run→Debug Configurations...</li>
+<li>In the left area, expand <em>C/C++Remote Application</em>.</li>
+<li>Locate your project and select it to bring up a new tabbed view in the <em>Debug Configurations</em> Dialog.</li>
+</ul>
+<img alt="_images/debugform.jpg" src="_images/debugform.jpg" />
+<ul class="simple">
+<li>Use the drop-down menu now in the <em>Connection</em> field and pick the IP Address you entered earlier.</li>
+<li>Enter the absolute path on the target into which you want to deploy the application. Use the <em>Browse</em> button near <em>Remote Absolute File Path for C/C++Application:</em> field. No password is needed.</li>
+</ul>
+<img alt="_images/remotepath.jpg" src="_images/remotepath.jpg" />
+<ul class="simple">
+<li>Enter also in the path the name of the application you want to build. (e.g. Hello)</li>
+</ul>
+<img alt="_images/debug.jpg" src="_images/debug.jpg" />
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If debug does not works, check if tcf-agent is running on the board and gdbserver is present.</p>
+</div>
+<div class="line-block">
+<div class="line">Click <em>Debug</em> to bring up a login screen and login as root.</div>
+<div class="line">Accept the debug perspective.</div>
+</div>
+<img alt="_images/debug1.png" src="_images/debug1.png" />
+<p>With <strong>F6</strong> key you can execute the application <strong>step by step</strong>. You can see the target output in the eclipse <em>console view</em></p>
+<img alt="_images/debug2.png" src="_images/debug2.png" />
+</div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

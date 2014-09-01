@@ -1,0 +1,169 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to use HOB &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="How to configure Minicom" href="remote.html" />
+    <link rel="prev" title="How to write the NAND memory" href="nand.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="remote.html" title="How to configure Minicom">next</a>
+              <li><a href="nand.html" title="How to write the NAND memory">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">How to use HOB</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="how-to-use-hob">
+<span id="howtousehob"></span><h1>How to use HOB<a class="headerlink" href="#how-to-use-hob" title="Permalink to this headline">¶</a></h1>
+<p>HOB is a graphical interface for bitbake. To run it, <a class="reference internal" href="poky.html#prepareenvironment"><em>prepare the environment</em></a> than run <strong>hob</strong> command or launch Hob using Architech Splashscreen just click on <strong>Run hob</strong>.,</p>
+<img alt="_images/run_hob.jpg" src="_images/run_hob.jpg" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<div class="last line-block">
+<div class="line">Internet connection required.</div>
+<div class="line">At the first launch of Hob it takes some time before appears.</div>
+</div>
+</div>
+<p>HOB window will appear.</p>
+<img alt="_images/hob-welcome.jpg" src="_images/hob-welcome.jpg" />
+<div class="section" id="how-to-speedup-the-build-process">
+<span id="hobspeedup"></span><h2>How to speedup the build process<a class="headerlink" href="#how-to-speedup-the-build-process" title="Permalink to this headline">¶</a></h2>
+<p>When you imported the virtual machine you might have changed the number of processors made available to the virtual machine itself. If you did that, you can optimize the build time in this way:</p>
+<ul class="simple">
+<li>Click on <strong>Settings</strong>, a new window will appear. Select on <strong>Build environment</strong> tab.</li>
+</ul>
+<img alt="_images/hob-parallelism.jpg" src="_images/hob-parallelism.jpg" />
+<ul class="simple">
+<li>Change <strong>BB number threads</strong> value from 2 to <em>&lt;number of processors used by the virtual machine&gt; * 2</em>, set <strong>Parallel make</strong> to the same value. Click on save.</li>
+</ul>
+<p>This modification will be available just for the current build directory, to make it permanent please refer to Poky&#8217;s guide on <a class="reference internal" href="poky.html#pokyspeedup"><em>How to speedup the build process</em></a>.</p>
+</div>
+<div class="section" id="how-to-change-the-root-file-system-package-format">
+<h2>How to change the root file system package format<a class="headerlink" href="#how-to-change-the-root-file-system-package-format" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to choose between the following formats:</p>
+<ul class="simple">
+<li>ipk,</li>
+<li>rpm, and</li>
+<li>deb,</li>
+</ul>
+<p>by clicking on <strong>Settings</strong> →  <strong>Output</strong></p>
+<img alt="_images/hob-package-manager.jpg" src="_images/hob-package-manager.jpg" />
+<p>choosing your preferred package format, and saving.</p>
+</div>
+<div class="section" id="how-to-build-a-predefined-image">
+<h2>How to build a predefined image<a class="headerlink" href="#how-to-build-a-predefined-image" title="Permalink to this headline">¶</a></h2>
+<p>Select <strong>pengwyn</strong> from the combo-box, after the recipes have been parsed the section <strong>Select a base image</strong> will appear and you can choose your preferred image.</p>
+<img alt="_images/hob-image-selection.jpg" src="_images/hob-image-selection.jpg" />
+<p>Click on <strong>Build image</strong></p>
+<img alt="_images/hob-build-predefined-image.jpg" src="_images/hob-build-predefined-image.jpg" />
+<p>than the build process will start.</p>
+<img alt="_images/hob-building-predefined-image.jpg" src="_images/hob-building-predefined-image.jpg" />
+<p>Please note that the build process can last several hours till it finishes.</p>
+<img alt="_images/hob-predefined-image-build-completed.jpg" src="_images/hob-predefined-image-build-completed.jpg" />
+<p>It might happen that a fetch task gives an error, if so, double check that the virtual machine has a proper network configuration. If the network configuration has been proved correct, the error might mean that the needed server is down for some reason, in that case the only option you have is to wait and try again later.</p>
+</div>
+<div class="section" id="how-to-build-a-custom-image">
+<h2>How to build a custom image<a class="headerlink" href="#how-to-build-a-custom-image" title="Permalink to this headline">¶</a></h2>
+<p>There are two possible ways to customize an image to build:</p>
+<ul class="simple">
+<li>modify a predefined image,</li>
+<li>create a new image from scratch.</li>
+</ul>
+<p>Once you selected a predefined image, you can click on <strong>View recipes</strong> to add/remove recipes and tasks or you can click on <strong>View packages</strong> to add/remove previously built packages. After the image has been customized you can build your image.
+If you want to customize every detail you can choose <strong>Create your own image</strong> from the drop down menu of section <strong>Select a base image</strong>, than, as previously stated, you can customize the content of your file system and build it.</p>
+</div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

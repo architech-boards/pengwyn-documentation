@@ -1,0 +1,170 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to add 3”5 display with touch screen &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Quick start guide" href="quick.html" />
+    <link rel="prev" title="Opkg Basics" href="opkg.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="quick.html" title="Quick start guide">next</a>
+              <li><a href="opkg.html" title="Opkg Basics">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">How to add 3&#8221;5 display with touch screen</a><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="how-to-add-3-5-display-with-touch-screen">
+<h1>How to add 3&#8221;5 display with touch screen<a class="headerlink" href="#how-to-add-3-5-display-with-touch-screen" title="Permalink to this headline">¶</a></h1>
+<p>This procedure will guide you to the installation of the display on the Pengwyn board and the configuration of the software to test it.</p>
+<img alt="_images/display-1.png" src="_images/display-1.png" />
+<div class="section" id="installing-the-board">
+<h2>Installing the board<a class="headerlink" href="#installing-the-board" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>switch off the board</li>
+<li>connect display</li>
+</ol>
+<img alt="_images/display-2.png" src="_images/display-2.png" />
+<ol class="arabic simple" start="3">
+<li>switch on the board</li>
+</ol>
+</div>
+<div class="section" id="installing-the-software">
+<h2>Installing the software<a class="headerlink" href="#installing-the-software" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>run <strong>VirtualBox</strong> and start the virtual machine</li>
+<li>download the display patch (ref. <a class="reference external" href="http://downloads.architechboards.com/pengwyn/updates/linux-pengwyn_3.2.display.patch.tar.gz">linux-pengwyn_3.2.display.patch.tar.gz</a> ) and save the file to <strong>/home/architech/architech_sdk/architech/pengwyn</strong> folder</li>
+<li>open terminal and decompress patch</li>
+</ol>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'touch_rst-host-31' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="touch_rst-host-31" class="language-markup">cd /home/architech/architech_sdk/architech/pengwyn
+tar xvf linux-pengwyn_3.2.display.patch.tar.gz</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ol class="arabic simple" start="4">
+<li>change kernel configuration, adding <strong>TI touch screen driver</strong></li>
+</ol>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'touch_rst-host-32' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="touch_rst-host-32" class="language-markup">cd yocto
+source poky/oe-init-build-env
+bitbake linux-pengwyn -c cleanall
+bitbake linux-pengwyn -c menuconfig</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><img alt="_images/touch-cfg-1.png" src="_images/touch-cfg-1.png" />
+<img alt="_images/touch-cfg-2.png" src="_images/touch-cfg-2.png" />
+<img alt="_images/touch-cfg-3.png" src="_images/touch-cfg-3.png" />
+<img alt="_images/touch-cfg-4.png" src="_images/touch-cfg-4.png" />
+<ol class="arabic simple" start="5">
+<li>compile the kernel</li>
+</ol>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'touch_rst-host-33' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="touch_rst-host-33" class="language-markup">bitbake linux-pengwyn</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ol class="arabic simple" start="6">
+<li>run <strong>HOB</strong></li>
+<li>select <strong>Pengwyn</strong> target and <strong>qt4demo</strong></li>
+<li>build</li>
+<li>run <strong>SD card creator</strong></li>
+<li>insert SDcard on Pengwyn board and wait Linux start-up</li>
+<li>first time, <strong>the touch screen calibration is needed</strong>, than qt4 demo will start</li>
+</ol>
+</div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

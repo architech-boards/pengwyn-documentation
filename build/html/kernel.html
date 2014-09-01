@@ -1,0 +1,211 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to customize the Linux Kernel &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="How to create the SD card" href="sdcard.html" />
+    <link rel="prev" title="How to customize u-boot" href="uboot.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="sdcard.html" title="How to create the SD card">next</a>
+              <li><a href="uboot.html" title="How to customize u-boot">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">How to customize the Linux Kernel</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="how-to-customize-the-linux-kernel">
+<span id="kernel-page"></span><h1>How to customize the Linux Kernel<a class="headerlink" href="#how-to-customize-the-linux-kernel" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="from-menuconfig">
+<h2>From menuconfig<a class="headerlink" href="#from-menuconfig" title="Permalink to this headline">¶</a></h2>
+<p>The most frequent way of customization of the Linux Kernel is to change the .config file that contains the Kernel options. Setup the environment and run:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-91' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-91" class="language-markup">~/architech_sdk/architech/pengwyn/yocto/build$ bitbake linux-pengwyn -c cleanall
+...
+~/architech_sdk/architech/pengwyn/yocto/build$ bitbake linux-pengwyn -c menuconfig
+...</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>a new window, like the following one, will pop-up</p>
+<img alt="_images/menuconfig.png" src="_images/menuconfig.png" />
+<p>follow the instructions, save and exit, than you ready to generate your preferred image based on your customized kernel. If you prefer, you can build just the kernel running:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-92' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-92" class="language-markup">~/architech_sdk/architech/pengwyn/yocto/build$ bitbake linux-pengwyn
+
+...</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>At the end of the build process, the output file (uImage.bin), along with the built kernel modules (modules-3.2.0-r0-pengwyn.tgz), will be placed under <em>tmp/deploy/images/</em> inside your build directory, so, if you are building your system from the default directory, the destination directory will be <em>/home/architech/architech_sdk/architech/pengwyn/yocto/build/tmp/deploy/images</em>.</p>
+</div>
+<div class="section" id="from-sources">
+<h2>From sources<a class="headerlink" href="#from-sources" title="Permalink to this headline">¶</a></h2>
+<p>If you want to modify the Linux kernel sources instead, insert the following commands to create an image of the actual used sources:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-93' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-93" class="language-markup">~$ mkdir -p /home/architech/Documents/linux-kernel
+~$ cd /home/architech/Documents/linux-kernel
+~/Documents/linux-kernel$ cp /home/architech/architech_sdk/architech/pengwyn/yocto/poky/meta-silica/recipes-kernel/linux/linux-pengwyn-3.2/linux-pengwyn* .
+~/Documents/linux-kernel$ tar -xzf linux-pengwyn_3.2.tar.gz
+~/Documents/linux-kernel$ mv linux-pengwyn_3.2 a
+~/Documents/linux-kernel$ patch -p1 -d a/ &lt; linux-pengwyn_3.2.patch
+patching file ...
+...
+~/Documents/linux-kernel$ cp -r a/ b/</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Modify the sources contained inside directory <strong>b</strong>, than create your patch</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-94' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-94" class="language-markup">~/Documents/linux-kernel$ diff -Naur a/ b/ &gt; linux-pengwyn_3.2.mine.patch
+~/Documents/linux-kernel$ cp linux-pengwyn_3.2.mine.patch /home/architech/architech_sdk/architech/pengwyn/yocto/poky/meta-silica/recipes-kernel/linux/linux-pengwyn-3.2/</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Create a file named <em>linux-pengwyn_3.2.bbappend</em> inside directory <em>/home/architech/architech_sdk/architech/pengwyn/yocto/poky/meta-silica/recipes-kernel/linux/</em> and write the following text inside the .bbappend file:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-95' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-95" class="language-markup">SRC_URI += "file://linux-pengwyn_3.2.mine.patch \
+"</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Clean and build:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-96' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-96" class="language-markup">bitbake linux-pengwyn -c cleanall
+bitbake linux-pengwyn</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div></div>
+<div class="section" id="building-kernel-without-bitbake">
+<h2>Building kernel without bitbake<a class="headerlink" href="#building-kernel-without-bitbake" title="Permalink to this headline">¶</a></h2>
+<p>The following commands are used to build the kernel without bitbake. First of all, install the package uboot-mkimage:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-97' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-97" class="language-markup">apt-get install uboot-mkimage</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>and setup the environment:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-98' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-98" class="language-markup">export PATH="$PATH:/opt/poky/1.2.1/sysroots/i686-pokysdk-linux/usr/bin/armv5te-poky-linux-gnueabi"</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>After that, in linux kernel folder, set the kernel options:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-99' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-99" class="language-markup">make ARCH=arm CROSS_COMPILE=arm-poky-linux-gnueabi- menuconfig</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>and build the kernel:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-910' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-910" class="language-markup">make ARCH=arm CROSS_COMPILE=arm-poky-linux-gnueabi- uImage</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>It is not necessary using <em>make clean</em> to rebuild the kernel image after have modified source code.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Use option -j with make to speed up the compilation</p>
+<dl class="docutils">
+<dt>-j [jobs], &#8211;jobs[=jobs]</dt>
+<dd>Specifies  the number of jobs (commands) to run simultaneously.  If there is more than one -j option, the last one is effective.  If the -j option is given without
+an argument, make will not limit the number of jobs that can run simultaneously.</dd>
+</dl>
+<p class="last">example: make -j 4 ARCH=arm CROSS_COMPILE=arm-poky-linux-gnueabi- uImage</p>
+</div>
+</div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

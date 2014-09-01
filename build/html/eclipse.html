@@ -1,0 +1,234 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to write a software application for the Pengwyn board &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Qt SDK" href="qt.html" />
+    <link rel="prev" title="How to configure Minicom" href="remote.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="qt.html" title="Qt SDK">next</a>
+              <li><a href="remote.html" title="How to configure Minicom">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">How to write a software application for the Pengwyn board</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="how-to-write-a-software-application-for-the-pengwyn-board">
+<h1>How to write a software application for the Pengwyn board<a class="headerlink" href="#how-to-write-a-software-application-for-the-pengwyn-board" title="Permalink to this headline">¶</a></h1>
+<p>Hereafter, the operating system that runs the IDE/debugger will be named host machine, and the board being debugged will be named target machine.
+The host machine could be running as a virtual machine guest operating system, anyway, the documentation for the host machine running as a guest operating system and as host operating system is exactly the same.</p>
+<p>Pay attention before to start writing your application you need:</p>
+<ul class="simple">
+<li>a filesystem (you can use bitbake/hob to build your preferred filesystem) with develop support (that is, it must include all the necessary header files, the tcf-agent program and gdbserver)</li>
+<li>an SD card already partitioned, with the bootloader in the FAT partition, and</li>
+<li>a network connect between the host machine and the target machine.</li>
+</ul>
+<div class="section" id="creating-the-project">
+<span id="index-0"></span><h2>Creating the Project<a class="headerlink" href="#creating-the-project" title="Permalink to this headline">¶</a></h2>
+<p>You can create two types of projects: Autotools-based, or Makefile-based. This section describes how to create Autotools-based projects from within the <strong>Eclipse IDE</strong>.
+Launch Eclipse using Architech Splashscreen just click on <strong>Develop with Eclipse</strong>.</p>
+<img alt="_images/run_eclipse.jpg" src="_images/run_eclipse.jpg" />
+<p>To create a project based on a Yocto template and then display the source code, follow these steps:</p>
+<ul class="simple">
+<li>Select File→New→Project...</li>
+<li>Under <em>C/C++</em>, double click on <em>C Project</em> to create the project.</li>
+<li>Expand <em>Yocto ADT Project</em>.</li>
+<li>Select <em>Hello World ANSI C Autotools Project</em>. This is an Autotools-based project based on a Yocto Project template.</li>
+</ul>
+<img alt="_images/newproject.jpg" src="_images/newproject.jpg" />
+<ul class="simple">
+<li>Put a name in the Project <em>name:</em> field. Do not use hyphens as part of the name.</li>
+<li>Click <em>Next</em>.</li>
+<li>Add information in the <em>Author</em> and <em>Copyright</em> notice fields.</li>
+<li>Be sure the <em>License</em> field is correct.</li>
+<li>Click <em>Finish</em>.</li>
+</ul>
+<p><strong>Note:</strong> If the &#8220;open perspective&#8221; prompt appears, click <em>Yes</em> so that you enter in the C/C++ perspective.
+The left-hand navigation pane shows your project. You can display your source by double clicking the project&#8217;s source file.</p>
+<img alt="_images/projectexplorer.jpg" src="_images/projectexplorer.jpg" />
+</div>
+<div class="section" id="building-the-project">
+<h2>Building the Project<a class="headerlink" href="#building-the-project" title="Permalink to this headline">¶</a></h2>
+<p>To build the project, select Project→Build Project. The console should update with messages from the cross-compiler.
+To add more libraries to compile:</p>
+<ul class="simple">
+<li>Click on Project→Properties.</li>
+<li>Expand the box next to Autotools.</li>
+<li>Select Configure Settings.</li>
+<li>In CFLAGS field, you can add the path of includes with -Ipath_include</li>
+<li>In LDFLAGS field, you can specify the libraries you use with -lname_library and you can also specify the path where to look for libraries with -Lpath_library</li>
+</ul>
+<p><strong>Note:</strong> All libraries are located in <em>~/architech_sdk/architech/pengwyn/sysroot</em> subdirectories.</p>
+<img alt="_images/autotools.jpg" src="_images/autotools.jpg" />
+</div>
+<div class="section" id="deploying-and-debugging-the-application">
+<span id="index-1"></span><h2>Deploying and Debugging the Application<a class="headerlink" href="#deploying-and-debugging-the-application" title="Permalink to this headline">¶</a></h2>
+<p>Connect the Pengwyn board to the PC by means of a usb cable to power the board and to have the serial console</p>
+<img alt="_images/pengwyn-power.jpg" src="_images/pengwyn-power.jpg" />
+<p>Once you built the project and the board is running the image, use minicom (refer to section <a class="reference internal" href="remote.html#usbserial"><em>Usb-Serial</em></a> to know how to configure minicom) to run <strong>tcf-agent</strong> program in target board:</p>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'eclipse_rst-board-181' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="eclipse_rst-board-181" class="language-markup">Yocto (Built by Poky 7.0.1) 1.2.1
+ttyO0
+
+pengwyn login: root
+root@pengwyn:~# ifconfig eth0 192.168.0.10</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Test the ethernet:</p>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'eclipse_rst-board-182' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="eclipse_rst-board-182" class="language-markup">ping 192.168.0.100</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>If the output is similar to this one:</p>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'eclipse_rst-board-183' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="eclipse_rst-board-183" class="language-markup">64 bytes from 192.168.0.100: icmp_req=1 ttl=64 time=0.946 ms
+64 bytes from 192.168.0.100: icmp_req=2 ttl=64 time=0.763 ms
+64 bytes from 192.168.0.100: icmp_req=3 ttl=64 time=0.671 ms
+64 bytes from 192.168.0.100: icmp_req=4 ttl=64 time=0.793 ms</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>the ethernet connection is ok, then run command:</p>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'eclipse_rst-board-184' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="eclipse_rst-board-184" class="language-markup">/etc/init.d/tcf-agent restart</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>On the Host machine, follow these steps to let <strong>Eclipse</strong> deploy and debug your application:</p>
+<ul class="simple">
+<li>Select <em>Remote System Explorer</em> perspective.</li>
+</ul>
+<img alt="_images/tcf.jpg" src="_images/tcf.jpg" />
+<ul class="simple">
+<li>In <em>Remote System</em> area right-click TCF icon and select <em>Property</em>.</li>
+</ul>
+<img alt="_images/tcf2.jpg" src="_images/tcf2.jpg" />
+<ul class="simple">
+<li>In <em>Host</em> tab, insert in <em>Host Name</em> and <em>Connection Name</em> fields the IP address of the target board. (e.g. 192.168.0.10)</li>
+</ul>
+<img alt="_images/tcf3.jpg" src="_images/tcf3.jpg" />
+<ul class="simple">
+<li>Then press <em>OK</em>.</li>
+<li>Select Run→Debug Configurations...</li>
+<li>In the left area, expand <em>C/C++Remote Application</em>.</li>
+<li>Locate your project and select it to bring up a new tabbed view in the <em>Debug Configurations</em> Dialog.</li>
+</ul>
+<img alt="_images/debugform.jpg" src="_images/debugform.jpg" />
+<ul class="simple">
+<li>Use the drop-down menu now in the <em>Connection</em> field and pick the IP Address you entered earlier.</li>
+<li>Enter the absolute path on the target into which you want to deploy the application. Use the <em>Browse</em> button near <em>Remote Absolute File Path for C/C++Application:</em> field. No password is needed.</li>
+</ul>
+<img alt="_images/remotepath.jpg" src="_images/remotepath.jpg" />
+<ul class="simple">
+<li>Enter also in the path the name of the application you want to build. (e.g. Hello)</li>
+</ul>
+<img alt="_images/debug.jpg" src="_images/debug.jpg" />
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">If debug does not works, check if tcf-agent is running on the board and gdbserver is present.</p>
+</div>
+<div class="line-block">
+<div class="line">Click <em>Debug</em> to bring up a login screen and login as root.</div>
+<div class="line">Accept the debug perspective.</div>
+</div>
+<img alt="_images/debug1.png" src="_images/debug1.png" />
+<p>With <strong>F6</strong> key you can execute the application <strong>step by step</strong>. You can see the target output in the eclipse <em>console view</em></p>
+<img alt="_images/debug2.png" src="_images/debug2.png" />
+</div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

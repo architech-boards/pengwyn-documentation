@@ -1,0 +1,251 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installing the Virtual Machine &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="How to use Poky" href="poky.html" />
+    <link rel="prev" title="Welcome to Pengwyn SDK’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="poky.html" title="How to use Poky">next</a>
+              <li><a href="index.html" title="Welcome to Pengwyn SDK’s documentation!">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installing the Virtual Machine</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="installing-the-virtual-machine">
+<h1>Installing the Virtual Machine<a class="headerlink" href="#installing-the-virtual-machine" title="Permalink to this headline">¶</a></h1>
+<p>The development environment is provided as a virtual disk (to be used by a VirtualBox virtual machine)
+which you can download from this page:</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><a class="reference external" href="http://downloads.architechboards.com/sdk/virtual_machine/download.html">http://downloads.architechboards.com/sdk/virtual_machine/download.html</a></p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Compute the MD5SUM value of the zip file you downloaded and compare it to the golden one you find in the download page.</p>
+</div>
+<p>Uncompress the file, and you will get a <em>.vdi</em> file that is our virtual disk image.
+The environment contains the SDK for all the boards provided by Architech, Pengwyn included.</p>
+<div class="section" id="download-virtualbox">
+<h2>Download VirtualBox<a class="headerlink" href="#download-virtualbox" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/vdi_virtualbox_logo.png" class="align-left" src="_images/vdi_virtualbox_logo.png" />
+<p>For being able to use it, you first need to install <strong>VirtualBox</strong> (version 4.2.10 or higher).
+You can get VirtualBox installer from here:</p>
+<p><a class="reference external" href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
+<p>Download the version that suits your host operating system. You need to download and install the <strong>Extension Pack</strong> as well.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Make sure that the extension pack has the same version of VirtualBox.</p>
+</div>
+<p>Install the software with all the default options.</p>
+</div>
+<div class="section" id="create-a-new-virtual-machine">
+<h2>Create a new Virtual Machine<a class="headerlink" href="#create-a-new-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Run VirtualBox</li>
+</ol>
+<img alt="_images/vdi_open_virtualbox.png" class="align-center" src="_images/vdi_open_virtualbox.png" />
+<ol class="arabic simple" start="2">
+<li>Click on <em>New</em> button</li>
+</ol>
+<img alt="_images/vdi_new_virtual_machine.png" class="align-center" src="_images/vdi_new_virtual_machine.png" />
+<ol class="arabic simple" start="3">
+<li>Select the name of the virtual machine and the operating system type</li>
+</ol>
+<img alt="_images/vdi_virtual_machine_name.png" class="align-center" src="_images/vdi_virtual_machine_name.png" />
+<ol class="arabic simple" start="4">
+<li>Select the amount of memory you want to give to your new virtual machine</li>
+</ol>
+<img alt="_images/vdi_virtual_machine_memory.png" class="align-center" src="_images/vdi_virtual_machine_memory.png" />
+<ol class="arabic simple" start="5">
+<li>Make the virtual machine use Architech&#8217;s virtual disk by pointing to the downloaded file. Than click on <em>Create</em>.</li>
+</ol>
+<img alt="_images/vdi_hard_drive.png" class="align-center" src="_images/vdi_hard_drive.png" />
+</div>
+<div class="section" id="setup-the-network">
+<h2>Setup the network<a class="headerlink" href="#setup-the-network" title="Permalink to this headline">¶</a></h2>
+<p>We need to setup a port forwarding rule to let you (later) use the virtual machine as a local repository of packages.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The virtual machine must be off</p>
+</div>
+<ol class="arabic simple">
+<li>Select Architech&#8217;s virtual machine from the list of virtual machines</li>
+</ol>
+<img alt="_images/vdi_machine_listed.png" class="align-center" src="_images/vdi_machine_listed.png" />
+<ol class="arabic simple" start="2">
+<li>Click on <em>Settings</em></li>
+</ol>
+<img alt="_images/vdi_click_settings.png" class="align-center" src="_images/vdi_click_settings.png" />
+<ol class="arabic simple" start="3">
+<li>Select <em>Network</em></li>
+</ol>
+<img alt="_images/vdi_network.png" class="align-center" src="_images/vdi_network.png" />
+<ol class="arabic simple" start="4">
+<li>Expand <em>Advanced</em> of <em>Adapter 1</em></li>
+</ol>
+<img alt="_images/vdi_network_nat_advanced.png" class="align-center" src="_images/vdi_network_nat_advanced.png" />
+<ol class="arabic simple" start="5">
+<li>Click on <em>Port Forwarding</em></li>
+</ol>
+<img alt="_images/vdi_network_nat_port_forwarding.png" class="align-center" src="_images/vdi_network_nat_port_forwarding.png" />
+<ol class="arabic simple" start="6">
+<li>Add a new <em>rule</em></li>
+</ol>
+<img alt="_images/vdi_network_nat_port_forwarding_rule_add.png" class="align-center" src="_images/vdi_network_nat_port_forwarding_rule_add.png" />
+<ol class="arabic simple" start="7">
+<li>Configure the <em>rule</em></li>
+</ol>
+<img alt="_images/vdi_network_nat_port_forwarding_rule_added.png" class="align-center" src="_images/vdi_network_nat_port_forwarding_rule_added.png" />
+<ol class="arabic simple" start="8">
+<li>Click on <em>Ok</em></li>
+</ol>
+</div>
+<div class="section" id="customize-the-number-of-processors">
+<h2>Customize the number of processors<a class="headerlink" href="#customize-the-number-of-processors" title="Permalink to this headline">¶</a></h2>
+<p>Building an entire system from the ground up is a business that can take up to several hours.
+To improve the performances of the overall build process, you can, if your computer has enough resources, assign more than one
+processor to the virtual machine.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The virtual machine must be off</p>
+</div>
+<ol class="arabic simple">
+<li>Select Architech&#8217;s virtual machine from the list of virtual machines</li>
+</ol>
+<img alt="_images/vdi_machine_listed.png" class="align-center" src="_images/vdi_machine_listed.png" />
+<ol class="arabic simple" start="2">
+<li>Click on <em>Settings</em></li>
+</ol>
+<img alt="_images/vdi_click_settings.png" class="align-center" src="_images/vdi_click_settings.png" />
+<ol class="arabic simple" start="3">
+<li>Select <em>System</em></li>
+<li>Select <em>Processor</em></li>
+<li>Assign the number of processors you wish to assign to the virtual machine</li>
+</ol>
+<img alt="_images/vdi_change_number_of_processors.png" class="align-center" src="_images/vdi_change_number_of_processors.png" />
+<p>If you changed the number of processors, you might want to consider reading the guides on how to speedup the build process for <a class="reference internal" href="poky.html#pokyspeedup"><em>Poky</em></a> and <a class="reference internal" href="hob.html#hobspeedup"><em>HOB</em></a>.</p>
+</div>
+<div class="section" id="create-a-shared-folder">
+<h2>Create a shared folder<a class="headerlink" href="#create-a-shared-folder" title="Permalink to this headline">¶</a></h2>
+<p>A shared folder is way for host and guest operating systems to exchange files by means of the file system.
+You need to choose a directory on your host operating system to share with the guest operating system.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The virtual machine must be off</p>
+</div>
+<ol class="arabic simple">
+<li>Select Architech&#8217;s virtual machine from the list of virtual machines</li>
+</ol>
+<img alt="_images/vdi_machine_listed.png" class="align-center" src="_images/vdi_machine_listed.png" />
+<ol class="arabic simple" start="2">
+<li>Click on <em>Settings</em></li>
+</ol>
+<img alt="_images/vdi_click_settings.png" class="align-center" src="_images/vdi_click_settings.png" />
+<ol class="arabic simple" start="3">
+<li>Select <em>Shared Folders</em></li>
+<li>Add a new shared folder</li>
+</ol>
+<img alt="_images/vdi_add_shared_folder.png" class="align-center" src="_images/vdi_add_shared_folder.png" />
+<ol class="arabic simple" start="5">
+<li>Choose a directory to share on your host machine. Make sure <em>Auto-mount</em> is selected.</li>
+</ol>
+<img alt="_images/vdi_new_shared_folder.png" class="align-center" src="_images/vdi_new_shared_folder.png" />
+<p>Once the virtual machine has been booted, the shared folder will be mounted under <em>/media/</em> directory inside the virtual machine.</p>
+</div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

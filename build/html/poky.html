@@ -1,0 +1,324 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to use Poky &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="How to customize u-boot" href="uboot.html" />
+    <link rel="prev" title="Installing the Virtual Machine" href="vm.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="uboot.html" title="How to customize u-boot">next</a>
+              <li><a href="vm.html" title="Installing the Virtual Machine">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">How to use Poky</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="how-to-use-poky">
+<span id="howtousepoky"></span><h1>How to use Poky<a class="headerlink" href="#how-to-use-poky" title="Permalink to this headline">¶</a></h1>
+<p><strong>Poky</strong> is a stable version of <strong>OpenEmbedded</strong> tailored for the <strong>Yocto Project</strong>. It consists of <strong>BitBake</strong>, that is a make-alike build tool, and a set of recipes (.bb files) and configuration files used to drive bitbake during the build process.
+A recipe is a collection of metadata used by BitBake to set variables or define additional build-time tasks. With the variables, a recipe can specify, for example, where to get the sources, which build process to use, the license of the package, an so on. There is a set of predefined tasks (the fetch task for example fetches the sources from the network, from a repository or from the local machine, than the sources are cached for later reuses), but a recipe can always adds custom ones or overrides/modifies existing ones. <strong>Yocto</strong> is an umbrella project that contains a few components, Poky is one of the largest components of Yocto. This document will focus on the most basic topics, for a full guide you are encouraged to read <a class="reference external" href="https://www.yoctoproject.org/documentation">the official documentation of the Yocto Project</a>.</p>
+<div class="section" id="how-to-prepare-the-environment">
+<span id="prepareenvironment"></span><h2>How to prepare the environment<a class="headerlink" href="#how-to-prepare-the-environment" title="Permalink to this headline">¶</a></h2>
+<p>The virtual machine contains Denzil (version 7.0.1 of Poky, corresponding to Yocto version 1.2.1) already installed and configured to work with the Pengwyn board under <em>/home/architech/architech_sdk/pengwyn/yocto/poky</em>. To start using Poky, open a terminal (Ctrl+Alt+t or from Ubuntu&#8217;s menu: Applications→Accessories→Terminal) and type:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'poky_rst-host-81' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="poky_rst-host-81" class="language-markup">~$ cd architech_sdk/architech/pengwyn/yocto
+~/architech_sdk/architech/pengwyn/yocto$ source poky/oe-init-build-env
+
+### Shell environment set up for builds. ###
+
+You can now run 'bitbake &lt;target&gt;'
+
+Common targets are:
+core-image-minimal
+core-image-sato
+meta-toolchain
+meta-toolchain-sdk
+adt-installer
+meta-ide-support
+
+You can also run generated qemu images with a command like 'runqemu qemux86'
+
+~/architech_sdk/architech/pengwyn/yocto/build$</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>With the <em>source</em> command the environment has been prepared and, in the current shell, you are able to execute bitbake commands. The sourced script changed also the current directory, that now is <em>~/architech_sdk/architech/pengwyn/yocto/build</em>.
+You are free to use another build directory, to do that, when you source the environment script, you can specify the name of the directory to use like in the following example:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'poky_rst-host-82' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="poky_rst-host-82" class="language-markup">~/architech_sdk/architech/pengwyn/yocto$ source poky/oe-init-build-env myBuilds
+You had no conf/local.conf file. This configuration file has therefore been
+created for you with some default values. You may wish to edit it to use a
+different MACHINE (target hardware) or enable parallel build options to take
+advantage of multiple cores for example. See the file for more information as
+common configuration options are commented.
+
+The Yocto Project has extensive documentation about OE including a reference manual
+which can be found at:
+  http://yoctoproject.org/documentation
+
+For more information about OpenEmbedded see their website:
+  http://www.openembedded.org/
+
+You had no conf/bblayers.conf file. The configuration file has been created for
+you with some default values. To add additional metadata layers into your
+configuration please add entries to this file.
+
+The Yocto Project has extensive documentation about OE including a reference manual
+which can be found at:
+  http://yoctoproject.org/documentation
+
+For more information about OpenEmbedded see their website:
+  http://www.openembedded.org/
+
+
+### Shell environment set up for builds. ###
+
+You can now run 'bitbake &lt;target&gt;'
+
+Common targets are:
+  core-image-minimal
+  core-image-sato
+  meta-toolchain
+  meta-toolchain-sdk
+  adt-installer
+  meta-ide-support
+
+You can also run generated qemu images with a command like 'runqemu qemux86'
+
+~/architech_sdk/architech/pengwyn/yocto/myBuilds$</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div></div>
+<div class="section" id="how-to-build-your-linux-distribution">
+<h2>How to build your Linux distribution<a class="headerlink" href="#how-to-build-your-linux-distribution" title="Permalink to this headline">¶</a></h2>
+<p>To make a Linux distribution for the Pengwyn board you are going to need:</p>
+<ul class="simple">
+<li>a bootloader,</li>
+<li>the Linux Kernel (along with modules), and</li>
+<li>a filesystem.</li>
+</ul>
+<p>There is a set of recipes already prepared to generate all that. The pre-configured virtual machine supports the following subset of those recipes:</p>
+<ul class="simple">
+<li>core-image-base.bb</li>
+<li>core-image-basic.bb</li>
+<li>core-image-core.bb</li>
+<li>core-image-clutter.bb</li>
+<li>core-image-minimal.bb</li>
+<li>core-image-minimal-dev.bb</li>
+<li>core-image-minimal-mtdutils.bb</li>
+<li>core-image-lsb.bb</li>
+<li>core-image-lsb-dev.bb</li>
+<li>core-image-lsb-sdk.bb</li>
+<li>qt4e-demo-image.bb</li>
+<li>core-image-sato.bb</li>
+</ul>
+<p>Each recipe generates the bootloader, the Linux Kernel, and a specific filesystem. We encourage you to read the official documentation for the details of the aforementioned images recipes. To tell BitBake to build one of those images, run <em>bitbake</em> with the image recipe name (without .bb) as argument, for example, to build the core-image-minimal.bb image run <em>bitbake core-image-minimal</em> like in the following example:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'poky_rst-host-83' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="poky_rst-host-83" class="language-markup">~/architech_sdk/architech/pengwyn/yocto/build$ bitbake core-image-minimal
+Pseudo is not present but is required, building this first before the main build
+Loading cache: 100% |#############################################| |ETA:  00:00:00
+Loaded 1790 entries from dependency cache.
+
+OE Build Configuration:
+BB_VERSION        = "1.15.2"
+TARGET_ARCH       = "arm"
+TARGET_OS         = "linux-gnueabi"
+MACHINE           = "pengwyn"
+DISTRO            = "poky"
+DISTRO_VERSION    = "1.2.1"
+TUNE_FEATURES     = "armv7a vfp neon cortexa8"
+TARGET_FPU        = "vfp-neon"
+meta
+meta-yocto        = ":"
+meta-efl
+meta-gnome
+meta-gpe
+meta-initramfs
+meta-multimedia
+meta-oe
+meta-xfce         = "(nobranch):e77646bc2cf905fd671fc5c19ab6fd17f9b94b3f"
+meta-ti-amsdk     = "(nobranch):d8f257b275bbf2d573d66d823a118c765f7a26f9"
+meta-silica       = ":"
+
+NOTE: Resolving any missing task queue dependencies
+NOTE: Preparing runqueue
+NOTE: Executing SetScene Tasks
+NOTE: Executing RunQueue Tasks
+...</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Depending on your hardware and Internet characteristics, this task can take from less than one hour to several hours. Once it finishes, you are going to find bootloader, Linux kernel, kernel modules and filesystem under directory <em>~/architech_sdk/architech/pengwyn/yocto/tmp/deploy/images</em>. If you were working under the default directory (build directory), for example, you are going to find all the following files under directory <em>~/architech_sdk/architech/pengwyn/yocto/build/tmp/deploy/images</em>:</p>
+<ul class="simple">
+<li><strong>MLO</strong> (<span class="target" id="index-0"></span>bootloader),</li>
+<li><strong>u-boot-pengwyn.img</strong> (<span class="target" id="index-1"></span>bootloader),</li>
+<li><strong>uImage-pengwyn.bin</strong> (<span class="target" id="index-2"></span>Linux Kernel),</li>
+<li><strong>modules-3.2.0-r0-pengwyn.tgz</strong> (<span class="target" id="index-3"></span>Kernel modules), and</li>
+<li><strong>core-image-minimal-pengwyn.tar.gz</strong> (filesystem to be written onto the SD card, the NFS or the NAND memory),</li>
+</ul>
+<p>that is the result of building your Linux system from the ground up.
+It might happen that a fetch task gives an error, if so, double check that the virtual machine has a proper network configuration. If the network configuration has been proved correct, the error might mean that the needed server is down for some reason, in that case the only option you have is to wait and try again later.</p>
+</div>
+<div class="section" id="how-to-speedup-the-build-process">
+<span id="pokyspeedup"></span><h2>How to speedup the build process<a class="headerlink" href="#how-to-speedup-the-build-process" title="Permalink to this headline">¶</a></h2>
+<p>When you imported the virtual machine, you might have choosen the number of processors to give to the virtual machine, if so, you can change the parallelism factors to speedup the build process.
+Once you sourced the environment script and it changed your current directory, you can find the file local.conf inside directory conf, use your preferred editor to open it and change BB_NUMER_THREADS variable value from <em>2</em> to <em>&lt;number of processors&gt; * 2</em>, and change PARALLEL_MAKE variable value from <em>-j 2</em> to <em>-j &lt;number of processors&gt; * 2</em>. For example, if you gave 4 processors to the virtual machine, you could set:</p>
+<ul class="simple">
+<li>BB_NUMBER_THREADS = 8, and</li>
+<li>PARALLEL_MAKE = -j 8.</li>
+</ul>
+<p>Those modifications are available to the current build directory alone, so if you create another build directory you should set again the same values in the corresponding local.conf file.
+To make such changes available anytime you create a new build directory, you can edit file ~/architech_sdk/architech/pengwyn/yocto/poky/meta-yocto/conf/local.conf.sample and change the value of the aforementioned variables, every time you create a new build directory local.conf.sample file will be used to create the project local.conf file, and the modification will be seen and used by your new projects.</p>
+</div>
+<div class="section" id="package-management-and-class">
+<h2>Package management and class<a class="headerlink" href="#package-management-and-class" title="Permalink to this headline">¶</a></h2>
+<p>Poky supports the generation of three types of packages:</p>
+<ul class="simple">
+<li>ipk,</li>
+<li>rpm, and</li>
+<li>deb.</li>
+</ul>
+<p>The default one is ipk, you can change that modifying the PACKAGE_CLASSES variable value inside conf/local.conf file in your build directory. Also in this case, you can make your preference permanent editing file ~/architech_sdk/architech/pengwyn/yocto/poky/meta-yocto/conf/local.conf.sample directly.</p>
+<p>The tool used to manage the packages directly onto the target is going to be installed by default, to remove it and save space on the generated file system you can edit file local.conf and remove <em>package-management</em> value from EXTRA_IMAGE_FEATURES variable. As usual, if you want that modification to be permanent, change the value directly within file local.conf.sample.</p>
+</div>
+<div class="section" id="development-accessories">
+<h2>Development accessories<a class="headerlink" href="#development-accessories" title="Permalink to this headline">¶</a></h2>
+<p>To debug your code on the Pengwyn board you will need:</p>
+<ul class="simple">
+<li>the <em>tcf-agent</em> service, and</li>
+<li><em>gdbserver</em>.</li>
+</ul>
+<p>Both the utility have already been configured to be installed on the destination file system but, if you want a smaller file system and you already finished debugging your application, you can remove <em>tcf-agent</em> and <em>gdbserver</em> values from IMAGE_INSTALL_append inside local.conf file.</p>
+<p>Another set of utilities that you might be insterested about is <em>mtd-utils</em>, with the programs installed by such a package you can manage the NAND memory and you can write your filesystem directly onto the NAND memory. By default the <em>mtd-utils</em> package is going to be installed onto your preferred filesystem, anyway, if you want to remove it from the build process you can delete <em>mtd-utils</em> value from IMAGE_INSTALL_append variable.</p>
+</div>
+<div class="section" id="kernel-modules">
+<h2>Kernel modules<a class="headerlink" href="#kernel-modules" title="Permalink to this headline">¶</a></h2>
+<p>Kernel modules are pieces of code that can be loaded and unloaded into the kernel space upon demand. They extend the functionality of the kernel without the need to reboot the system. If you want insert new modules into your distribution there are two ways to do this:</p>
+<ul class="simple">
+<li>manually (after you have built the image):</li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li>turn on Pengwyn board</li>
+<li>use minicom (refer to section <a class="reference internal" href="remote.html#usbserial"><em>Usb-Serial</em></a> to know how to configure minicom) to uncompress the new module package from the root of the target file system.</li>
+<li>launch command:</li>
+</ol>
+</div></blockquote>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'poky_rst-board-171' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="poky_rst-board-171" class="language-markup">depmod</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>This command handle dependency descriptions for the new loadable kernel modules. This dependency is written to <em>modules.dep</em> file that can be used by <em>modprobe</em> to automatically load the relevant modules.</p>
+<ul class="simple">
+<li>automatically (before to build image):</li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Before to use bitbake command to build a image, go to directory <em>~/architech_sdk/architech/pengwyn/yocto/build/conf</em> and open the local.conf file with your preferred editor.</li>
+<li>Modify <strong>IMAGE_INSTALL_append</strong> variable value adding <strong>kernel-modules</strong> like in the following example:</li>
+</ol>
+</div></blockquote>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'poky_rst-host-84' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="poky_rst-host-84" class="language-markup">IMAGE_INSTALL_append = " tcf-agent dgbserver kernel-modules"</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>In this way the modules dependencies will be resolved at build time and the kernel modules will be installed in the file system.</p>
+</div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to customize u-boot &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="How to customize the Linux Kernel" href="kernel.html" />
+    <link rel="prev" title="How to use Poky" href="poky.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="kernel.html" title="How to customize the Linux Kernel">next</a>
+              <li><a href="poky.html" title="How to use Poky">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">How to customize u-boot</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="how-to-customize-u-boot">
+<span id="uboot"></span><h1>How to customize u-boot<a class="headerlink" href="#how-to-customize-u-boot" title="Permalink to this headline">¶</a></h1>
+<p>To customize <strong>u-boot</strong> you need to modify the sources. First of all, you need to have two different directories, one that contains the exact sources that poky uses to build the system, and another one with your modifications. To explain how to setup those two directories, hereafter will be assumed that you will work inside directory <em>~/Documents</em>. Open the terminal, than type:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'uboot_rst-host-41' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="uboot_rst-host-41" class="language-markup">~/Documents$ mkdir /home/architech/Documents/u-boot-configuration
+~/Documents$ cd /home/architech/Documents/u-boot-configuration
+~/Documents/u-boot-configuration$ cp ../../architech_sdk/architech/pengwyn/yocto/poky/meta-silica/recipes-bsp/u-boot/u-boot-pengwyn-2013.01/* .
+~/Documents/u-boot-configuration$ tar -xzf u-boot-pengwyn-2013.01.tar.gz
+~/Documents/u-boot-configuration$ mv u-boot-pengwyn-2013.01 a
+~/Documents/u-boot-configuration$ patch -p1 -d a/ &lt; u-boot-pengwyn-2013.01.patch
+patching file arch/arm/cpu/armv7/am33xx/board.c
+patching file arch/arm/include/asm/arch-am33xx/cpu.h
+patching file arch/arm/include/asm/arch-am33xx/omap_gpmc.h
+patching file board/silica/pengwyn/Makefile
+patching file board/silica/pengwyn/mux.c
+patching file boards.cfg
+patching file common/miiphyutil.c
+patching file common/spl/spl_nand.c
+patching file drivers/mtd/nand/nand_base.c
+patching file drivers/mtd/nand/nand_bbt.c
+patching file drivers/mtd/nand/nand_ids.c
+patching file drivers/mtd/nand/omap_gpmc.c
+patching file drivers/net/cpsw.c
+patching file drivers/net/phy/Makefile
+patching file drivers/net/phy/phy.c
+patching file drivers/net/phy/ti.c
+patching file include/configs/pengwyn.h
+patching file include/linux/mtd/mtd-abi.h
+~/Documents/u-boot-configuration$ cp -r a/ b/</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Directory <em>b</em> contains the sources that you can modify. Typically, you will want to modify u-boot settings, in which case you should edit file <em>~/Documents/u-boot-configuration/</em> <strong>b</strong> <em>/include/configs/pengwyn.h</em> with your preferred editor. When you are done with your modifications, type:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'uboot_rst-host-42' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="uboot_rst-host-42" class="language-markup">~/Documents/u-boot-configuration$ diff -Naur a/ b/ &gt; u-boot-pengwyn-2013.01.mine.patch
+~/Documents/u-boot-configuration$ cp u-boot-pengwyn-2013.01.mine.patch /home/architech/architech_sdk/architech/pengwyn/yocto/poky/meta-silica/recipes-bsp/u-boot/u-boot-pengwyn-2013.01/</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Create a file named <em>u-boot-pengwyn_2013.01.bbappend</em> inside directory <em>/home/architech/architech_sdk/architech/pengwyn/yocto/poky/meta-silica/recipes-bsp/u-boot/</em> and write the following text inside the .bbappend file:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'uboot_rst-host-43' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="uboot_rst-host-43" class="language-markup">SRC_URI += "file://u-boot-pengwyn-2013.01.mine.patch \
+"</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>You are now ready to build (actually, rebuild) your customized version of u-boot:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'uboot_rst-host-44' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="uboot_rst-host-44" class="language-markup">~/architech_sdk/architech/pengwyn/yocto/build$ bitbake u-boot-pengwyn -c cleanall
+...
+~/architech_sdk/architech/pengwyn/yocto/build$ bitbake u-boot-pengwyn</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Once the build process finished, the output files (MLO and u-boot-pengwyn.img) will be placed under <em>tmp/deploy/images/</em> inside your build directory, so, if you are building your system from the default directory, the destination directory will be <em>/home/architech/architech_sdk/architech/pengwyn/yocto/build/tmp/deploy/images</em>.</p>
+<div class="section" id="build-u-boot-without-bitbake">
+<h2>Build u-boot without bitbake<a class="headerlink" href="#build-u-boot-without-bitbake" title="Permalink to this headline">¶</a></h2>
+<p>Set the enviroment with following command:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'uboot_rst-host-45' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="uboot_rst-host-45" class="language-markup">export PATH="$PATH:/opt/poky/1.2.1/sysroots/i686-pokysdk-linux/usr/bin/armv5te-poky-linux-gnueabi"</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Go in u-boot folder and launch these commands to build:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'uboot_rst-host-46' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="uboot_rst-host-46" class="language-markup">make ARCH=arm CROSS_COMPILE=arm-poky-linux-gnueabi- pengwyn_config
+make ARCH=arm CROSS_COMPILE=arm-poky-linux-gnueabi-</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div></div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

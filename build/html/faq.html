@@ -1,0 +1,233 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FAQ &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="prev" title="Quick start guide" href="quick.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="quick.html" title="Quick start guide">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-password-of-user-architech">What is the password of user <strong>architech</strong>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-sudo">What is <strong>sudo</strong>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-password-for-user-root">What is the password for user root?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#when-should-i-use-an-external-power-supply">When should I use an external power supply?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-first-time-i-ran-the-virtual-machine-i-obtained-an-error-related-to-the-ethernet-controller-what-can-i-do">The first time I ran the virtual machine I obtained an error related to the Ethernet controller. What can I do?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#my-build-is-taking-too-long-what-can-i-do-to-optimize">My build is taking too long, what can I do to optimize?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#when-i-try-to-create-the-sd-card-something-goes-wrong-what-can-i-do">When I try to create the SD card something goes wrong, what can I do?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-i-enable-commercially-licensed-recipes">How do I enable commercially licensed recipes?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-i-know-which-drivers-are-included">How do i know which drivers are included?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#i-have-problems-to-create-a-patch-for-the-kernel-how-can-i-do-that">I have problems to create a patch for the kernel. How can I do that?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-i-include-qwebview-widget-in-my-project-the-compilation-fails">How do I include QWebView widget in my project? The compilation fails</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#i-have-problems-with-internet-connection">I have problems with internet connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#i-have-builded-a-package-but-i-do-not-see-it-in-opkg-list-why">I have builded a package but I do not see it in opkg list. Why?</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-the-password-of-user-architech">
+<h2>What is the password of user <strong>architech</strong>?<a class="headerlink" href="#what-is-the-password-of-user-architech" title="Permalink to this headline">¶</a></h2>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'faq_rst-host-101' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="faq_rst-host-101" class="language-markup">architech</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div></div>
+<div class="section" id="what-is-sudo">
+<h2>What is <strong>sudo</strong>?<a class="headerlink" href="#what-is-sudo" title="Permalink to this headline">¶</a></h2>
+<p><strong>sudo</strong> is a program for Unix-like computer operating systems that allows users to run programs/commands with the security privileges of another user, normally the superuser or root. Not all the users can call sudo, only the <strong>sudoers</strong>, <strong>architech</strong> user is a sudoer. When you run a command preceeded by sudo Linux will ask you the user password, for <strong>architech</strong> user the password is <strong>architech</strong>.</p>
+</div>
+<div class="section" id="what-is-the-password-for-user-root">
+<h2>What is the password for user root?<a class="headerlink" href="#what-is-the-password-for-user-root" title="Permalink to this headline">¶</a></h2>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'faq_rst-host-102' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="faq_rst-host-102" class="language-markup">root</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div></div>
+<div class="section" id="when-should-i-use-an-external-power-supply">
+<h2>When should I use an external power supply?<a class="headerlink" href="#when-should-i-use-an-external-power-supply" title="Permalink to this headline">¶</a></h2>
+<p>Pengwyn Board can be powered directly from the USB connector, the power consumption is about 250mA without any option installed.
+When powered from USB, the board can supply enough current to a USB keyboard (or a USB mouse) and to the DVI interface.
+If you want to connect something more power hungry to the USB port, we suggest you to power the board with an external power supply or to use externally powered USB devices.</p>
+</div>
+<div class="section" id="the-first-time-i-ran-the-virtual-machine-i-obtained-an-error-related-to-the-ethernet-controller-what-can-i-do">
+<h2>The first time I ran the virtual machine I obtained an error related to the Ethernet controller. What can I do?<a class="headerlink" href="#the-first-time-i-ran-the-virtual-machine-i-obtained-an-error-related-to-the-ethernet-controller-what-can-i-do" title="Permalink to this headline">¶</a></h2>
+<p>We used a Realteck Ethernet controller when we built the virtual machine, if you have a different one is not a problem, click on <strong>change network settings</strong> and insert the proper configuration for your machine.</p>
+</div>
+<div class="section" id="my-build-is-taking-too-long-what-can-i-do-to-optimize">
+<h2>My build is taking too long, what can I do to optimize?<a class="headerlink" href="#my-build-is-taking-too-long-what-can-i-do-to-optimize" title="Permalink to this headline">¶</a></h2>
+<p>Please, refer to:</p>
+<ul class="simple">
+<li><a class="reference internal" href="hob.html#hobspeedup"><em>How to speedup the build process</em></a> Section of Chapter <a class="reference internal" href="hob.html#howtousehob"><em>How to use HOB</em></a>, and/or</li>
+<li><a class="reference internal" href="poky.html#pokyspeedup"><em>How to speedup the build process</em></a> Section of Chapter <a class="reference internal" href="poky.html#howtousepoky"><em>How to use Poky</em></a>.</li>
+</ul>
+</div>
+<div class="section" id="when-i-try-to-create-the-sd-card-something-goes-wrong-what-can-i-do">
+<h2>When I try to create the SD card something goes wrong, what can I do?<a class="headerlink" href="#when-i-try-to-create-the-sd-card-something-goes-wrong-what-can-i-do" title="Permalink to this headline">¶</a></h2>
+<p>The simplest reason could be that the SD card is write protected or locked, please double check that.</p>
+</div>
+<div class="section" id="how-do-i-enable-commercially-licensed-recipes">
+<h2>How do I enable commercially licensed recipes?<a class="headerlink" href="#how-do-i-enable-commercially-licensed-recipes" title="Permalink to this headline">¶</a></h2>
+<p>Commercially licensed recipes are disabled by default.
+Your conf/local.conf file, contained in your build directory (by default is /home/architech/architech_sdk/architech/pengwyn/yocto/build/), has a (commented) line starting with:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'faq_rst-host-103' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="faq_rst-host-103" class="language-markup"># LICENSE_FLAGS_WHITELIST</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>uncomment it (delete <strong>#</strong> symbol).</p>
+<p>For the details, please refer to <a class="reference external" href="http://www.yoctoproject.org/docs/1.2/poky-ref-manual/poky-ref-manual.html#enabling-commercially-licensed-recipes">the official Yocto Project documentation</a>.</p>
+</div>
+<div class="section" id="how-do-i-know-which-drivers-are-included">
+<h2>How do i know which drivers are included?<a class="headerlink" href="#how-do-i-know-which-drivers-are-included" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>If you have built an image then you can go in <em>~/architech_sdk/architech/pengwyn/yocto/build/tmp/work/pengwyn-poky-linux-gnueabi/linux-pengwyn-3.2-r0/linux-pengwyn_3.2/drivers</em>. In this directory there are all kernel linux drivers.</li>
+<li>If you haven&#8217;t build an image then use following commands:</li>
+</ul>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'faq_rst-host-104' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="faq_rst-host-104" class="language-markup">~$ mkdir -p /home/architech/Documents/linux-kernel
+~$ cd /home/architech/Documents/linux-kernel
+~/Documents/linux-kernel$ cp /home/architech/architech_sdk/architech/pengwyn/yocto/poky/meta-silica/recipes-kernel/linux/linux-pengwyn-3.2/linux-pengwyn* .
+~/Documents/linux-kernel$ tar -xzf linux-pengwyn_3.2.tar.gz
+~/Documents/linux-kernel$ patch -p1 -d linux-pengwyn_3.2 &lt; linux-pengwyn_3.2.patch
+patching file ...
+~/Documents/linux-kernel$ cd linux-pengwyn_3.2/drivers</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>In this directory there are all kernel linux drivers.</p>
+<ul class="simple">
+<li>Another metod is using the <em>menuconfig</em> of linux. In <em>linux-pengwyn_3.2</em> directory use the command:</li>
+</ul>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'faq_rst-host-105' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="faq_rst-host-105" class="language-markup">make menuconfig</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Once opened go in <em>Device Drivers</em>.</p>
+</div>
+<div class="section" id="i-have-problems-to-create-a-patch-for-the-kernel-how-can-i-do-that">
+<h2>I have problems to create a patch for the kernel. How can I do that?<a class="headerlink" href="#i-have-problems-to-create-a-patch-for-the-kernel-how-can-i-do-that" title="Permalink to this headline">¶</a></h2>
+<p>If you have already built the kernel before modify it, you need purge all file objects. To do this use the following command:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'faq_rst-host-106' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="faq_rst-host-106" class="language-markup">make ARCH=arm mrproper</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>will cleanup totally the sources. See <a class="reference internal" href="kernel.html#kernel-page"><em>How to customize the Linux Kernel</em></a> for details.</p>
+</div>
+<div class="section" id="how-do-i-include-qwebview-widget-in-my-project-the-compilation-fails">
+<h2>How do I include QWebView widget in my project? The compilation fails<a class="headerlink" href="#how-do-i-include-qwebview-widget-in-my-project-the-compilation-fails" title="Permalink to this headline">¶</a></h2>
+<p>Open your .pro project file and add a new line under <em>QT += core gui</em>:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'faq_rst-host-107' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="faq_rst-host-107" class="language-markup">QT += webkit</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div></div>
+<div class="section" id="i-have-problems-with-internet-connection">
+<h2>I have problems with internet connection<a class="headerlink" href="#i-have-problems-with-internet-connection" title="Permalink to this headline">¶</a></h2>
+<p>If yuor company uses proxy then read this page to configure correctly yocto:
+<a class="reference external" href="https://wiki.yoctoproject.org/wiki/Working_Behind_a_Network_Proxy">Working Behind a Network Proxy</a>.</p>
+</div>
+<div class="section" id="i-have-builded-a-package-but-i-do-not-see-it-in-opkg-list-why">
+<h2>I have builded a package but I do not see it in opkg list. Why?<a class="headerlink" href="#i-have-builded-a-package-but-i-do-not-see-it-in-opkg-list-why" title="Permalink to this headline">¶</a></h2>
+<p>Please, refer to <a class="reference internal" href="opkg.html#update-package-index"><em>How to update the repository in the vm</em></a></p>
+</div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

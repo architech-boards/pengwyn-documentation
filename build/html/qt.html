@@ -1,0 +1,255 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Qt SDK &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Hardware" href="hardware.html" />
+    <link rel="prev" title="How to write a software application for the Pengwyn board" href="eclipse.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="hardware.html" title="Hardware">next</a>
+              <li><a href="eclipse.html" title="How to write a software application for the Pengwyn board">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Qt SDK</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="qt-sdk">
+<h1>Qt SDK<a class="headerlink" href="#qt-sdk" title="Permalink to this headline">¶</a></h1>
+<img alt="_images/qt-0.png" class="align-left" src="_images/qt-0.png" />
+<div class="line-block">
+<div class="line"><strong>Qt</strong> is a cross-platform application framework that is used for developing application software with a graphical user interface (GUI).</div>
+<div class="line"><strong>Qt Creator</strong> is a cross-platform C++ IDE, it includes a visual debugger and an integrated GUI layout and forms designer.</div>
+<div class="line">The versions used in this SDK are <strong>Qt SDK 4.7.4</strong> and <strong>Qt Creator 2.4.0</strong>.</div>
+<div class="line">It is possible to compile applications for <strong>x86</strong> and <strong>ARM</strong> processors.</div>
+<div class="line">You can debug the program on the virtual machine or on Pengwyn Board.</div>
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Before reading this Chapter you should be able to use HOB, bitbake, and minicom (or a similar program).</p>
+</div>
+<div class="section" id="build-image-with-qt">
+<h2>Build image with qt<a class="headerlink" href="#build-image-with-qt" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>With HOB or bitbake build <strong>qt4e-demo-image</strong>. To see how to do this, refer to <a class="reference internal" href="hob.html#howtousehob"><em>How to use HOB</em></a> and/or <a class="reference internal" href="poky.html#howtousepoky"><em>How to use Poky</em></a> Chapters.</li>
+<li>Once the image has been built (and assuming your current build directory is <em>/home/architech/architech_sdk/architech/pengwyn/yocto/build/</em>), run the following commands:</li>
+</ol>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_rst-host-71' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="qt_rst-host-71" class="language-markup">cd /home/architech/architech_sdk/architech/pengwyn/sysroot/
+sudo rm -rf *
+cp /home/architech/architech_sdk/architech/pengwyn/yocto/build/tmp/deploy/images/qt4e-demo-image-pengwyn.tar.gz .
+sudo tar -xzf qt4e-demo-image-pengwyn.tar.gz</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ol class="arabic simple" start="3">
+<li>Open file <em>/home/architech/architech_sdk/architech/pengwyn/sysroot/etc/inittab</em> and comment line 41:</li>
+</ol>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_rst-host-72' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="qt_rst-host-72" class="language-markup"># 1:2345:respawn:/sbin/getty 38400 tty1</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>this allows a USB keyboard to be seen by your Qt application.</p>
+<ol class="arabic simple" start="4">
+<li>We don&#8217;t need the qt demo application to start at boot, run the following command:</li>
+</ol>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_rst-host-73' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="qt_rst-host-73" class="language-markup">sudo rm /home/architech/architech_sdk/architech/pengwyn/sysroot/etc/init.d/qt4demo</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div></div>
+<div class="section" id="hello-world">
+<h2>Hello World!<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of this example project is to generate a form with an &#8220;Hello World&#8221; label in it, at the beginning on the x86 virtual machine and than on the Pengwyn board.</p>
+<p>To create the project follow these steps:</p>
+<ol class="arabic simple">
+<li>Launch Qt Creator from the Architech Splashscreen just clicking on <strong>Develop with Qt Creator</strong></li>
+</ol>
+<img alt="_images/qtCreatorStart.jpg" src="_images/qtCreatorStart.jpg" />
+<ol class="arabic simple" start="2">
+<li>Go to <em>File -&gt; Open File or Project</em> to open <strong>QtHelloWorld.pro</strong> file located in <em>~/architech_sdk/architech/pengwyn/workspace/qt/QtHelloWorld/</em> directory.</li>
+<li>Click on &#8220;QtHelloWorld&#8221; icon to open project menu.</li>
+</ol>
+<img alt="_images/qt-1.png" src="_images/qt-1.png" />
+<ol class="arabic simple" start="4">
+<li>Select the build configuration: <strong>Qt 4.7.4 (Qt-4.7.4) Debug</strong>.</li>
+</ol>
+<img alt="_images/qt-2.png" src="_images/qt-2.png" />
+<ol class="arabic simple" start="5">
+<li>To build the project, click on the bottom-left icon.</li>
+</ol>
+<img alt="_images/qt-3.png" src="_images/qt-3.png" />
+<ol class="arabic simple" start="6">
+<li>Once you built the project, click on the green triangle to run it.</li>
+</ol>
+<img alt="_images/qt-4.png" src="_images/qt-4.png" />
+<ol class="arabic simple" start="7">
+<li>Congratulations! You just built your first Qt application for x86.</li>
+</ol>
+<img alt="_images/qt-5.png" src="_images/qt-5.png" />
+<p>In the next section we will debug our Hello World! application directly on Pengwyn.</p>
+</div>
+<div class="section" id="debug-hello-world-project-on-pengwyn-board">
+<h2>Debug Hello World project on pengwyn board<a class="headerlink" href="#debug-hello-world-project-on-pengwyn-board" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="8">
+<li>Select build configuration: <strong>Qt 4.7.4 (Qt-4.7.4-arm) Debug</strong> and build the project.</li>
+</ol>
+<img alt="_images/qt-10.png" src="_images/qt-10.png" />
+<ol class="arabic simple" start="9">
+<li>Copy the generated executable to <em>~/architech_sdk/architech/pengwyn/sysroot/home/root</em>.</li>
+</ol>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_rst-host-74' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="qt_rst-host-74" class="language-markup">sudo cp ~/architech_sdk/architech/pengwyn/workspace/qt/QtHelloWorld-build-desktop-Qt_4_7_4__Qt-4_7_4-arm__Debug/QtHelloWorld ~/architech_sdk/architech/pengwyn/sysroot/home/root</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ol class="arabic simple" start="10">
+<li>Copy all files from <em>~/architech_sdk/architech/pengwynsysroot</em> to <em>rootfs</em> of the sdcard.</li>
+</ol>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_rst-host-75' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="qt_rst-host-75" class="language-markup">sudo cp -r * /media/path/to/rootfs</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Then turn on the pengwyn board.</p>
+<ol class="arabic simple" start="11">
+<li>Use minicom to launch gdbserver application on the target board:</li>
+</ol>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_rst-board-161' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="qt_rst-board-161" class="language-markup">gdbserver :10000 QtHelloWorld -qws</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ol class="arabic" start="12">
+<li><div class="first line-block">
+<div class="line">In Qt Creator, open the source file main.cpp and set a breakpoint at line 6.</div>
+<div class="line">To do this go with the mouse at line 6 and click with the right button to open the menu, select <strong>Set brackpoint at line 6</strong></div>
+</div>
+</li>
+</ol>
+<img alt="_images/qt-6.png" src="_images/qt-6.png" />
+<ol class="arabic simple" start="13">
+<li>Go to <em>Debug→Start Debugging→Attach To Remote Debug Server</em>, a form named &#8220;Start Debugger&#8221; will appear, insert the following data:</li>
+</ol>
+<img alt="_images/qt-7.jpg" src="_images/qt-7.jpg" />
+<ul class="simple">
+<li>Debugger: <strong>/opt/poky/1.2.1/sysroots/i686-pokysdk-linux/usr/bin/armv5te-poky-linux-gnueabi/arm-poky-linux-gnueabi-gdb</strong></li>
+<li>Local executable: <strong>/home/architech/architech_sdk/architech/pengwyn/workspace/qt/QtHelloWorld-build-desktop-Qt_4_7_4__Qt-4_7_4-arm__Debug/QtHelloWorld</strong></li>
+<li>Host and port: <strong>192.168.0.10:10000</strong></li>
+<li>Architecture: <strong>arm</strong></li>
+<li>GNU target: <strong>auto</strong></li>
+<li>Sysroot: <strong>/home/architech/architech_sdk/architech/pengwyn/sysroot</strong></li>
+</ul>
+<p>Press <strong>OK</strong> button to start the debug.</p>
+<img alt="_images/qt-8.png" src="_images/qt-8.png" />
+<ol class="arabic simple" start="14">
+<li>The hotkeys to debug the application are:</li>
+</ol>
+<ul class="simple">
+<li><strong>F10</strong>: Step over</li>
+<li><strong>F11</strong>: Step into</li>
+<li><strong>Shift + F11</strong>: Step out</li>
+<li><strong>F5</strong>: Continue, or press this icon:</li>
+</ul>
+<img alt="_images/qt-9.png" src="_images/qt-9.png" />
+<ol class="arabic simple" start="15">
+<li>To successfully exit from the debug it is better to close the graphical application from the target board with the mouse by clicking on the &#8216;X&#8217; symbol.</li>
+</ol>
+</div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to write the NAND memory &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="How to use HOB" href="hob.html" />
+    <link rel="prev" title="How to create the SD card" href="sdcard.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="hob.html" title="How to use HOB">next</a>
+              <li><a href="sdcard.html" title="How to create the SD card">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="how-to-write-the-nand-memory">
+<span id="index-0"></span><h1>How to write the NAND memory<a class="headerlink" href="#how-to-write-the-nand-memory" title="Permalink to this headline">¶</a></h1>
+<p>This section will explain how to transfer the data from the <span class="target" id="index-1"></span>sd card to the Pengwyn board <span class="target" id="index-2"></span>flash memory.</p>
+<ul class="simple">
+<li>Download tool scripts (download link <a class="reference external" href="_static/pengwyn-tools.tar.bz2">pengwyn-tools.tar.bz2</a>) and decompress in a folder. eg:</li>
+</ul>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'nand_rst-host-121' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="nand_rst-host-121" class="language-markup">tar -jxf pengwyn-tools.tar.bz2 -C /home/architech/Desktop</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Here you can find the tool <strong>create-nand-fs.sh</strong></p>
+<p>Follow these steps:</p>
+<ul class="simple">
+<li><a class="reference internal" href="remote.html#usbserial"><em>Connect the Pengwyn board to the PC</em></a></li>
+<li>Remove <span class="target" id="index-3"></span>jumper <span class="target" id="index-4"></span>J1</li>
+</ul>
+<img alt="_images/pengwynJ1.png" src="_images/pengwynJ1.png" />
+<ul class="simple">
+<li>Insert the already prepared SD card in the Pengwyn board socket</li>
+<li>Reset the board by means of button <span class="target" id="index-5"></span>S1</li>
+</ul>
+<img alt="_images/pengwynS1.png" src="_images/pengwynS1.png" />
+<ul class="simple">
+<li>Press any key when U-Boot says <strong>Hit any key to stop autoboot</strong></li>
+</ul>
+<img alt="_images/ubootStop.png" src="_images/ubootStop.png" />
+<ul class="simple">
+<li>Erase and upload the FLASH memory with the commands</li>
+</ul>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'nand_rst-board-201' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="nand_rst-board-201" class="language-markup">nand erase.chip
+run nandupdate</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>Wait until the NAND write completes, than restart the board with the command</li>
+</ul>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'nand_rst-board-202' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="nand_rst-board-202" class="language-markup">reset</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>Wait until U-Boot and Linux initialize the system, than insert <strong>root</strong> as login when required (there is no password)</li>
+<li>Create the flash file system with the automated script:</li>
+</ul>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'nand_rst-board-203' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="nand_rst-board-203" class="language-markup">./create-nand-fs.sh</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>When UBIFS is unmounted, shutdown linux with the command:</li>
+</ul>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'nand_rst-board-204' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="nand_rst-board-204" class="language-markup">shutdown -h now</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>When the system has been halted, remove the SD card, insert the jumper in J1 and reset the board with button S1.</li>
+</ul>
+<p>The system will now restart from NAND flash with the new operating system.</p>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

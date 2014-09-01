@@ -1,0 +1,233 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Opkg Basics &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="How to add 3”5 display with touch screen" href="touch.html" />
+    <link rel="prev" title="Hardware" href="hardware.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="touch.html" title="How to add 3”5 display with touch screen">next</a>
+              <li><a href="hardware.html" title="Hardware">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcard.html">How to create the SD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Opkg Basics</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="opkg-basics">
+<h1>Opkg Basics<a class="headerlink" href="#opkg-basics" title="Permalink to this headline">¶</a></h1>
+<img alt="_images/opkg.png" class="align-left" src="_images/opkg.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">Opkg (Open PacKaGe Management) is a lightweight package management system. It is written in C and resembles apt/dpkg in operation. It is intended for use on embedded Linux devices and is used in this capacity in the OpenEmbedded and OpenWrt projects.</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>Useful commands:</p>
+<ul class="simple">
+<li>command to know what packages are installed on the file system:</li>
+</ul>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'opkg_rst-board-131' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="opkg_rst-board-131" class="language-markup">opkg list-installed</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>show where are the files installed of the packet:</li>
+</ul>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'opkg_rst-board-132' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="opkg_rst-board-132" class="language-markup">opkg search name_packet</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>show what packets depend on the “name_packet” package:</li>
+</ul>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'opkg_rst-board-133' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="opkg_rst-board-133" class="language-markup">opkg whatdepends name_packet</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>remove packages:</li>
+</ul>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'opkg_rst-board-134' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="opkg_rst-board-134" class="language-markup">opkg remove name_packet</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>for this command there are important options:</p>
+<ol class="arabic simple">
+<li>This option will force the removal of the package but will leave any packages that depend on this package installed:</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">-</span><span class="n">force</span><span class="o">-</span><span class="n">depends</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>This option will go up the dependency list and remove all packages in the dependency chain:</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">-</span><span class="n">force</span><span class="o">-</span><span class="n">removal</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">dependent</span><span class="o">-</span><span class="n">packages</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>install the packages:</li>
+</ul>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'opkg_rst-board-135' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="opkg_rst-board-135" class="language-markup">opkg install name_packet</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><div class="section" id="how-to-add-a-repository">
+<h2>How to add a repository<a class="headerlink" href="#how-to-add-a-repository" title="Permalink to this headline">¶</a></h2>
+<p>Install a web server in the virtual machine, e.g.:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'opkg_rst-host-11' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="opkg_rst-host-11" class="language-markup">sudo apt-get install apache2</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Copy the built packages inside the web server directory, e.g.:</p>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'opkg_rst-host-12' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="opkg_rst-host-12" class="language-markup">sudo cp -r /home/architech/architech_sdk/pengwyn/yocto/build/tmp/deploy/ipk /var/www</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Create a file named <em>&lt;something&gt;.conf</em> (e.g. mine-repositories.conf) under <em>/etc/opkg/</em> of the Pengwyn file system and fill it with the following lines:</p>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'opkg_rst-board-136' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="opkg_rst-board-136" class="language-markup">src/gz arm     http://192.168.0.100/ipk/armv7a-vfp-neon
+src/gz all     http://192.168.0.100/ipk/all
+src/gz pengwyn http://192.168.0.100/ipk/pengwyn</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">192.168.0.100 is the server IP where there is the web server with repository</p>
+</div>
+<p>after that run the following command from Pengwyn&#8217;s shell:</p>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'opkg_rst-board-137' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="opkg_rst-board-137" class="language-markup">opkg update</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>Now you are ready to download and install the packages from the network.</p>
+</div>
+<div class="section" id="tip">
+<h2>Tip<a class="headerlink" href="#tip" title="Permalink to this headline">¶</a></h2>
+<p>With &#8220;opkg list | wc -l&#8221; you can know approximately how many packets there are in repository</p>
+<div>
+<div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'opkg_rst-board-138' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="opkg_rst-board-138" class="language-markup">opkg list | wc -l
+opkg update
+opkg list | wc -l</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><p>If the updating got success with the last command you see the number of packets incremented.</p>
+</div>
+<div class="section" id="how-to-update-the-repository-in-the-vm">
+<span id="update-package-index"></span><h2>How to update the repository in the vm<a class="headerlink" href="#how-to-update-the-repository-in-the-vm" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Once you have builded a package by Hob, do you need update package index. To do this, run the following command from Pengwyn&#8217;s shell.</div>
+</div>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'opkg_rst-host-13' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="opkg_rst-host-13" class="language-markup">cd /home/architech/architech_sdk/architech/pengwyn/yocto
+source yocto/oe-init-build-env
+bitbake package-index
+opkg update</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div></div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

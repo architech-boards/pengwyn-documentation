@@ -1,0 +1,257 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to create the SD card &mdash; pengwyn-sdk 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/architech.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+     
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT: '',
+        VERSION: '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/analytics.js"></script>
+    <link rel="top" title="pengwyn-sdk 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="How to write the NAND memory" href="nand.html" />
+    <link rel="prev" title="How to customize the Linux Kernel" href="kernel.html" /> 
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--<a class="brand" href="#"><img src=_static/architechlogo.png /></a>-->
+          <a class="brand" href="http://www.silica.com/architech">ArchiTech</a>
+          <ul class="nav pull-left">
+              <li><a href="genindex.html" title="General Index">index</a>
+              <li><a href="nand.html" title="How to write the NAND memory">next</a>
+              <li><a href="kernel.html" title="How to customize the Linux Kernel">previous</a>
+          </ul>
+          <form class="navbar-search pull-right" action="search.html" method="get">
+            <input type="text" class="search-query" placeholder="Search" name="q">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="well affix" style="width:180px">
+        <!--<div class="well sidebar-nav" data-spy="affix" daga-offset-rop="200">-->
+            <a href="http://www.silica.com/architech"><img style="padding-bottom: 20px" src=_static/architechlogo.png /></a>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vm.html">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poky.html">How to use Poky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uboot.html">How to customize u-boot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">How to customize the Linux Kernel</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">How to create the SD card</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nand.html">How to write the NAND memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hob.html">How to use HOB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">How to configure Minicom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eclipse.html">How to write a software application for the Pengwyn board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Qt SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opkg.html">Opkg Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="touch.html">How to add 3&#8221;5 display with touch screen</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html#installing-the-virtual-machine">Installing the Virtual Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="body">
+          
+  <div class="section" id="how-to-create-the-sd-card">
+<span id="sdcard"></span><h1>How to create the SD card<a class="headerlink" href="#how-to-create-the-sd-card" title="Permalink to this headline">¶</a></h1>
+<p>This section describes the steps to be followed to create a standalone bootable system on <strong>SD card</strong>.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Ensure that the following is available:</p>
+<ul class="simple">
+<li>An SD memory card reader/programmer to copy files from the Linux Host. The SD card reader must be accessible from VirtualBox.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>Not all computer built-in readers can be used, use USB connected devices instead.</strong></p>
+</div>
+<ul class="simple">
+<li>An SD card</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>Your sd-card will be formatted and all the data contained in it will be lost forever!</strong></p>
+</div>
+<ul class="simple">
+<li>The tool scripts (download link <a class="reference external" href="_static/pengwyn-tools.tar.bz2">pengwyn-tools.tar.bz2</a>) and decompress in a folder. eg:</li>
+</ul>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-61' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-61" class="language-markup">tar -jxf pengwyn-tools.tar.bz2 -C /home/architech/Desktop</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>A Linux host with fdisk, sfdisk, mkfs.ext3 and mkfs.vfat utilities. If you are running the VM with Ubuntu pre-installed and the environment already in place, all the packages are already available.</li>
+<li>The files <span class="target" id="index-0"></span>MLO, <span class="target" id="index-1"></span>u-boot-pengwyn.img, <span class="target" id="index-2"></span>uImage.bin, (optionally) the kernel modules (<span class="target" id="index-3"></span>modules-3.2.0-rX-pengwyn.tgz, where X is the revision number for the kernel modules, without any modification to the kernel configuration it should be 0) and the <span class="target" id="index-4"></span>root file system with name ending with <strong>-pengwyn.tar.gz</strong> are available inside the images deploy directory (<em>&lt;build directory&gt;/tmp/deploy/images/</em>, if your build directory is the default one, then the <span class="target" id="index-5"></span>deploy directory is <em>/home/architech/architech_sdk/architech/pengwyn/yocto/build/tmp/deploy/images</em>). The scripts will get the latest files from folder <em>/home/architech/architech_sdk/architech/pengwyn/yocto/build/tmp/deploy/images</em>. If you want to specify a custom directory enter the path directly after the script name, e.g.:</li>
+</ul>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-62' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-62" class="language-markup">cd /home/architech/Desktop/pengwyn-tools
+sudo ./fast-create-sdcard.sh /home/architech/custom-dir</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><span class="target" id="index-6"></span></div>
+<div class="section" id="how-to-build-the-sd-card">
+<span id="index-7"></span><h2>How to build the SD card<a class="headerlink" href="#how-to-build-the-sd-card" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Run the VM on VirtualBox</li>
+<li>Connect your SD card reader to your computer than to the virtual machine, from VirtualBox menu select Devices → USB Devices → &#8220;your SDcard reader&#8221;.</li>
+<li>Insert the SD card into the adapter (in this example we are inserting an SD card already partitioned with a FAT and an EXT2 partition, that is the basic configuration for the Pengwyn board).</li>
+<li>Run the following command (sudo password: <strong>architech</strong>)</li>
+</ul>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-63' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-63" class="language-markup">~$ sudo fdisk -l
+
+Disk /dev/sdb: 1971 MB, 1971322880 bytes
+255 heads, 63 sectors/track, 239 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x9bfa2153
+
+Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1   *           1           9       72261    c  W95 FAT32 (LBA)
+/dev/sdb2              11         239     1839442+  83  Linux</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>Find the device name from fdisk command output, in this example is <strong>/dev/sdb</strong>.</li>
+<li>Run the script (in pengwyn-tools folder) that will prepare the SD card with all the needed files to run the system:</li>
+</ul>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-64' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-64" class="language-markup">sudo ./fast-create-sdcard.sh</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><div class="line-block">
+<div class="line">When the script starts asks for the <span class="target" id="index-8"></span>sudo password, type <strong>pengwyn</strong> followed by enter-key.</div>
+<div class="line">The list of available devices will be shown: the SD card should be the number <strong>1</strong> of the list with name sdb. Check the size shown on the table to be sure that the device is the correct one. Enter the device number <strong>1</strong> followed by enter-key.</div>
+</div>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-65' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-65" class="language-markup">+------------------------------------------------------------------------------+
+|                                                                              |
+| This script will create a bootable SD card.                                  |
+| The script must be run with root permissions.                                |
+|                                                                              |
++------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+| LIST OF AVAILABLE DRIVES:                                                    |
++------------------------------------------------------------------------------+
+
+#  major   minor    size   name
+1:   8       16    1927168 sdb
+
+Enter Device Number #:</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><div class="line-block">
+<div class="line">The script will create two partitions on the SD card: the first one is a <strong>FAT32</strong> with the <strong>boot files</strong> (<span class="target" id="index-9"></span>MLO, <span class="target" id="index-10"></span>u-boot-pengwyn.img, <span class="target" id="index-11"></span>uImage.bin will be renamed to <strong>MLO</strong>, <strong>u-boot.img</strong> and <strong>uImage</strong>), the second one is an <strong>ext3</strong> with the <strong>target file system</strong>.</div>
+<div class="line">The operations will take few minutes.</div>
+</div>
+<div>
+<div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-66' );">select</a></div>
+<pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-66" class="language-markup">+------------------------------------------------------------------------------+
+|                                                                              |
+| This script will create a bootable SD card.                                  |
+| The script must be run with root permissions.                                |
+|                                                                              |
++------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+| LIST OF AVAILABLE DRIVES:                                                    |
++------------------------------------------------------------------------------+
+
+#  major   minor    size   name
+1:   8       16    1927168 sdb
+
+Enter Device Number #: 1
+
+sdb was selected
+
+sdb1  sdb2
+72261 1839442
+
+Mount the partitions
+Emptying partitions
+Syncing....
+
++------------------------------------------------------------------------------+
+|      Copying files now... will take minutes                                 |
++------------------------------------------------------------------------------+
+
+Copying boot partition
+Copying file system partition
+Copying modules
+Syncing....
+Un-mount the partitions
+Remove created temp directories
+Operation Finished
+
+Press ENTER to finish</code></pre>
+<script src="_static/prism.js"></script>
+<script src="_static/select_text.js"></script>
+</div><ul class="simple">
+<li>Remove the SD card</li>
+</ul>
+</div>
+</div>
+
+
+        </div>
+      </div>
+  </div>
+      <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+                <span class="brand">
+                    &copy; Copyright 2013, Silica.
+                  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+              </span>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
