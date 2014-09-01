@@ -18,9 +18,9 @@ Creating the Project
 --------------------
 
 You can create two types of projects: Autotools-based, or Makefile-based. This section describes how to create Autotools-based projects from within the **Eclipse IDE**.
-Launch Eclipse using Architech Launcher or use **run_eclipse** command or just click on the desktop icon.
+Launch Eclipse using Architech Splashscreen just click on **Develop with Eclipse**.
 
-.. image:: _static/run_eclipse.png
+.. image:: _static/run_eclipse.jpg
 
 To create a project based on a Yocto template and then display the source code, follow these steps:
 
@@ -29,7 +29,7 @@ To create a project based on a Yocto template and then display the source code, 
 * Expand *Yocto ADT Project*.
 * Select *Hello World ANSI C Autotools Project*. This is an Autotools-based project based on a Yocto Project template.
 
-.. image:: _static/newproject.png
+.. image:: _static/newproject.jpg
 
 * Put a name in the Project *name:* field. Do not use hyphens as part of the name.
 * Click *Next*.
@@ -40,7 +40,7 @@ To create a project based on a Yocto template and then display the source code, 
 **Note:** If the "open perspective" prompt appears, click *Yes* so that you enter in the C/C++ perspective.
 The left-hand navigation pane shows your project. You can display your source by double clicking the project's source file.
 
-.. image:: _static/projectexplorer.png
+.. image:: _static/projectexplorer.jpg
 
 Building the Project
 --------------------
@@ -54,9 +54,9 @@ To add more libraries to compile:
 * In CFLAGS field, you can add the path of includes with -Ipath_include
 * In LDFLAGS field, you can specify the libraries you use with -lname_library and you can also specify the path where to look for libraries with -Lpath_library
 
-**Note:** All libraries are located in *~/yocto/remote/nfs-eclipse-rootfs* subdirectories.
+**Note:** All libraries are located in *~/architech_sdk/architech/pengwyn/sysroot* subdirectories.
 
-.. image:: _static/autotools.png
+.. image:: _static/autotools.jpg
 
 .. index:: Debug
 
@@ -69,47 +69,94 @@ Connect the Pengwyn board to the PC by means of a usb cable to power the board a
 
 Once you built the project and the board is running the image, use minicom (refer to section :ref:`usbSerial` to know how to configure minicom) to run **tcf-agent** program in target board:
 
-::
+.. raw:: html
 
- Yocto (Built by Poky 7.0.1) 1.2.1                                               
-  ttyO0                                                                          
-                                                                                
- pengwyn login: root                                                             
- root@pengwyn:~# /etc/init.d/tcf-agent restart
+ <div>
+ <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'eclipse_rst-board-181' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="eclipse_rst-board-181" class="language-markup">Yocto (Built by Poky 7.0.1) 1.2.1
+ ttyO0
+ 
+ pengwyn login: root
+ root@pengwyn:~# ifconfig eth0 192.168.0.10</code></pre>
+ <script src="_static/prism.js"></script>
+ <script src="_static/select_text.js"></script>
+ </div>
+
+Test the ethernet:
+
+.. raw:: html
+
+ <div>
+ <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'eclipse_rst-board-182' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="eclipse_rst-board-182" class="language-markup">ping 192.168.0.100</code></pre>
+ <script src="_static/prism.js"></script>
+ <script src="_static/select_text.js"></script>
+ </div>
+
+If the output is similar to this one:
+
+.. raw:: html
+
+ <div>
+ <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'eclipse_rst-board-183' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="eclipse_rst-board-183" class="language-markup">64 bytes from 192.168.0.100: icmp_req=1 ttl=64 time=0.946 ms
+ 64 bytes from 192.168.0.100: icmp_req=2 ttl=64 time=0.763 ms
+ 64 bytes from 192.168.0.100: icmp_req=3 ttl=64 time=0.671 ms
+ 64 bytes from 192.168.0.100: icmp_req=4 ttl=64 time=0.793 ms</code></pre>
+ <script src="_static/prism.js"></script>
+ <script src="_static/select_text.js"></script>
+ </div>
+
+the ethernet connection is ok, then run command:
+
+.. raw:: html
+
+ <div>
+ <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'eclipse_rst-board-184' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="eclipse_rst-board-184" class="language-markup">/etc/init.d/tcf-agent restart</code></pre>
+ <script src="_static/prism.js"></script>
+ <script src="_static/select_text.js"></script>
+ </div>
 
 On the Host machine, follow these steps to let **Eclipse** deploy and debug your application:
 
 * Select *Remote System Explorer* perspective.
 
-.. image:: _static/tcf.png
+.. image:: _static/tcf.jpg
 
 * In *Remote System* area right-click TCF icon and select *Property*.
 
-.. image:: _static/tcf2.png
+.. image:: _static/tcf2.jpg
 
-* In *Host* tab, insert in *Host Name* and *Connection Name* fields the IP address of the target board. (e.g. 192.168.0.101)
+* In *Host* tab, insert in *Host Name* and *Connection Name* fields the IP address of the target board. (e.g. 192.168.0.10)
 
-.. image:: _static/tcf3.png
+.. image:: _static/tcf3.jpg
 
 * Then press *OK*.
 * Select Run→Debug Configurations...
 * In the left area, expand *C/C++Remote Application*.
 * Locate your project and select it to bring up a new tabbed view in the *Debug Configurations* Dialog.
 
-.. image:: _static/debugform.png
+.. image:: _static/debugform.jpg
 
 * Use the drop-down menu now in the *Connection* field and pick the IP Address you entered earlier.
 * Enter the absolute path on the target into which you want to deploy the application. Use the *Browse* button near *Remote Absolute File Path for C/C++Application:* field. No password is needed.
 
-.. image:: _static/remotepath.png
+.. image:: _static/remotepath.jpg
 
-* Enter also in the path the name of the application you want to build. (e.g. HelloWorld)
+* Enter also in the path the name of the application you want to build. (e.g. Hello)
 
-.. image:: _static/debug.png
-
-* Click *Debug* to bring up a login screen and login.
-* Accept the debug perspective. 
+.. image:: _static/debug.jpg
 
 .. important::
 
 	If debug does not works, check if tcf-agent is running on the board and gdbserver is present.
+
+| Click *Debug* to bring up a login screen and login as root.
+| Accept the debug perspective. 
+
+.. image:: _static/debug1.png
+
+With **F6** key you can execute the application **step by step**. You can see the target output in the eclipse *console view*
+
+.. image:: _static/debug2.png

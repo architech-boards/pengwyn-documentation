@@ -10,17 +10,19 @@ A recipe is a collection of metadata used by BitBake to set variables or define 
 
 How to prepare the environment
 ------------------------------
-The virtual machine contains Denzil (version 7.0.1 of Poky, corresponding to Yocto version 1.2.1) already installed and configured to work with the Pengwyn board under */home/pengwyn/yocto/poky*. To start using Poky, open a terminal (Ctrl+Alt+t or from Ubuntu's menu: Applications→Accessories→Terminal) and type:
+The virtual machine contains Denzil (version 7.0.1 of Poky, corresponding to Yocto version 1.2.1) already installed and configured to work with the Pengwyn board under */home/architech/architech_sdk/pengwyn/yocto/poky*. To start using Poky, open a terminal (Ctrl+Alt+t or from Ubuntu's menu: Applications→Accessories→Terminal) and type:
 
-::
+.. raw:: html
 
- pengwyn@pengwyn-desktop:~$ cd yocto
- pengwyn@pengwyn-desktop:~/yocto$ source poky/oe-init-build-env
-
+ <div>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'poky_rst-host-81' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="poky_rst-host-81" class="language-markup">~$ cd architech_sdk/architech/pengwyn/yocto
+ ~/architech_sdk/architech/pengwyn/yocto$ source poky/oe-init-build-env
+ 
  ### Shell environment set up for builds. ###
  
- You can now run 'bitbake <target>'
-
+ You can now run 'bitbake &lt;target&gt;'
+ 
  Common targets are:
  core-image-minimal
  core-image-sato
@@ -28,58 +30,65 @@ The virtual machine contains Denzil (version 7.0.1 of Poky, corresponding to Yoc
  meta-toolchain-sdk
  adt-installer
  meta-ide-support
-
+ 
  You can also run generated qemu images with a command like 'runqemu qemux86'
+ 
+ ~/architech_sdk/architech/pengwyn/yocto/build$</code></pre>
+ <script src="_static/prism.js"></script>
+ <script src="_static/select_text.js"></script>
+ </div>
 
- pengwyn@pengwyn-desktop:~/yocto/build$
-
-With the *source* command the environment has been prepared and, in the current shell, you are able to execute bitbake commands. The sourced script changed also the current directory, that now is *~/yocto/build*.
+With the *source* command the environment has been prepared and, in the current shell, you are able to execute bitbake commands. The sourced script changed also the current directory, that now is *~/architech_sdk/architech/pengwyn/yocto/build*.
 You are free to use another build directory, to do that, when you source the environment script, you can specify the name of the directory to use like in the following example:
 
-::
+.. raw:: html
 
- pengwyn@pengwyn-desktop:~/yocto$ source poky/oe-init-build-env myBuilds
+ <div>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'poky_rst-host-82' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="poky_rst-host-82" class="language-markup">~/architech_sdk/architech/pengwyn/yocto$ source poky/oe-init-build-env myBuilds
  You had no conf/local.conf file. This configuration file has therefore been
- created for you with some default values. You may wish to edit it to use a 
- different MACHINE (target hardware) or enable parallel build options to take 
- advantage of multiple cores for example. See the file for more information as 
+ created for you with some default values. You may wish to edit it to use a
+ different MACHINE (target hardware) or enable parallel build options to take
+ advantage of multiple cores for example. See the file for more information as
  common configuration options are commented.
-
+ 
  The Yocto Project has extensive documentation about OE including a reference manual
  which can be found at:
-    http://yoctoproject.org/documentation
-
+   http://yoctoproject.org/documentation
+ 
  For more information about OpenEmbedded see their website:
-    http://www.openembedded.org/
-
+   http://www.openembedded.org/
+ 
  You had no conf/bblayers.conf file. The configuration file has been created for
  you with some default values. To add additional metadata layers into your
  configuration please add entries to this file.
-
+ 
  The Yocto Project has extensive documentation about OE including a reference manual
  which can be found at:
-    http://yoctoproject.org/documentation
-
+   http://yoctoproject.org/documentation
+ 
  For more information about OpenEmbedded see their website:
-    http://www.openembedded.org/
-
-
-
+   http://www.openembedded.org/
+ 
+ 
  ### Shell environment set up for builds. ###
-
- You can now run 'bitbake <target>'
-
+ 
+ You can now run 'bitbake &lt;target&gt;'
+ 
  Common targets are:
-    core-image-minimal
-    core-image-sato
-    meta-toolchain
-    meta-toolchain-sdk
-    adt-installer
-    meta-ide-support
-
+   core-image-minimal
+   core-image-sato
+   meta-toolchain
+   meta-toolchain-sdk
+   adt-installer
+   meta-ide-support
+ 
  You can also run generated qemu images with a command like 'runqemu qemux86'
-
- pengwyn@pengwyn-desktop:~/yocto/myBuilds$
+ 
+ ~/architech_sdk/architech/pengwyn/yocto/myBuilds$</code></pre>
+ <script src="_static/prism.js"></script>
+ <script src="_static/select_text.js"></script>
+ </div>
 
 How to build your Linux distribution
 ------------------------------------
@@ -110,13 +119,15 @@ There is a set of recipes already prepared to generate all that. The pre-configu
 
 Each recipe generates the bootloader, the Linux Kernel, and a specific filesystem. We encourage you to read the official documentation for the details of the aforementioned images recipes. To tell BitBake to build one of those images, run *bitbake* with the image recipe name (without .bb) as argument, for example, to build the core-image-minimal.bb image run *bitbake core-image-minimal* like in the following example:
 
-::
+.. raw:: html
 
- pengwyn@pengwyn-desktop:~/yocto/build$ bitbake core-image-minimal
+ <div>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'poky_rst-host-83' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="poky_rst-host-83" class="language-markup">~/architech_sdk/architech/pengwyn/yocto/build$ bitbake core-image-minimal
  Pseudo is not present but is required, building this first before the main build
  Loading cache: 100% |#############################################| |ETA:  00:00:00
  Loaded 1790 entries from dependency cache.
-
+ 
  OE Build Configuration:
  BB_VERSION        = "1.15.2"
  TARGET_ARCH       = "arm"
@@ -126,26 +137,29 @@ Each recipe generates the bootloader, the Linux Kernel, and a specific filesyste
  DISTRO_VERSION    = "1.2.1"
  TUNE_FEATURES     = "armv7a vfp neon cortexa8"
  TARGET_FPU        = "vfp-neon"
- meta              
+ meta
  meta-yocto        = ":"
- meta-efl          
- meta-gnome        
- meta-gpe          
- meta-initramfs    
- meta-multimedia   
- meta-oe           
+ meta-efl
+ meta-gnome
+ meta-gpe
+ meta-initramfs
+ meta-multimedia
+ meta-oe
  meta-xfce         = "(nobranch):e77646bc2cf905fd671fc5c19ab6fd17f9b94b3f"
  meta-ti-amsdk     = "(nobranch):d8f257b275bbf2d573d66d823a118c765f7a26f9"
  meta-silica       = ":"
-
+ 
  NOTE: Resolving any missing task queue dependencies
  NOTE: Preparing runqueue
  NOTE: Executing SetScene Tasks
  NOTE: Executing RunQueue Tasks
- ...
+ ...</code></pre>
+ <script src="_static/prism.js"></script>
+ <script src="_static/select_text.js"></script>
+ </div>
 
 
-Depending on your hardware and Internet characteristics, this task can take from less than one hour to several hours. Once it finishes, you are going to find bootloader, Linux kernel, kernel modules and filesystem under directory *~/yocto/tmp/deploy/images*. If you were working under the default directory (build directory), for example, you are going to find all the following files under directory *~/yocto/build/tmp/deploy/images*:
+Depending on your hardware and Internet characteristics, this task can take from less than one hour to several hours. Once it finishes, you are going to find bootloader, Linux kernel, kernel modules and filesystem under directory *~/architech_sdk/architech/pengwyn/yocto/tmp/deploy/images*. If you were working under the default directory (build directory), for example, you are going to find all the following files under directory *~/architech_sdk/architech/pengwyn/yocto/build/tmp/deploy/images*:
 
 * **MLO** (:index:`bootloader`),
 * **u-boot-pengwyn.img** (:index:`bootloader`),
@@ -168,7 +182,7 @@ Once you sourced the environment script and it changed your current directory, y
 * PARALLEL_MAKE = -j 8.
 
 Those modifications are available to the current build directory alone, so if you create another build directory you should set again the same values in the corresponding local.conf file.
-To make such changes available anytime you create a new build directory, you can edit file ~/yocto/poky/meta-yocto/conf/local.conf.sample and change the value of the aforementioned variables, every time you create a new build directory local.conf.sample file will be used to create the project local.conf file, and the modification will be seen and used by your new projects.
+To make such changes available anytime you create a new build directory, you can edit file ~/architech_sdk/architech/pengwyn/yocto/poky/meta-yocto/conf/local.conf.sample and change the value of the aforementioned variables, every time you create a new build directory local.conf.sample file will be used to create the project local.conf file, and the modification will be seen and used by your new projects.
 
 Package management and class
 ----------------------------
@@ -179,7 +193,7 @@ Poky supports the generation of three types of packages:
 * rpm, and
 * deb.
 
-The default one is ipk, you can change that modifying the PACKAGE_CLASSES variable value inside conf/local.conf file in your build directory. Also in this case, you can make your preference permanent editing file ~/yocto/poky/meta-yocto/conf/local.conf.sample directly.
+The default one is ipk, you can change that modifying the PACKAGE_CLASSES variable value inside conf/local.conf file in your build directory. Also in this case, you can make your preference permanent editing file ~/architech_sdk/architech/pengwyn/yocto/poky/meta-yocto/conf/local.conf.sample directly.
 
 The tool used to manage the packages directly onto the target is going to be installed by default, to remove it and save space on the generated file system you can edit file local.conf and remove *package-management* value from EXTRA_IMAGE_FEATURES variable. As usual, if you want that modification to be permanent, change the value directly within file local.conf.sample.
 
@@ -208,20 +222,30 @@ Kernel modules are pieces of code that can be loaded and unloaded into the kerne
 
  3. launch command:
 
- ::
+.. raw:: html
 
-  depmod
+ <div>
+ <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'poky_rst-board-171' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="poky_rst-board-171" class="language-markup">depmod</code></pre>
+ <script src="_static/prism.js"></script>
+ <script src="_static/select_text.js"></script>
+ </div>
 
 This command handle dependency descriptions for the new loadable kernel modules. This dependency is written to *modules.dep* file that can be used by *modprobe* to automatically load the relevant modules.
 
 * automatically (before to build image):
 
- 1. Before to use bitbake command to build a image, go to directory *~/yocto/build/conf* and open the local.conf file with your preferred editor.
+ 1. Before to use bitbake command to build a image, go to directory *~/architech_sdk/architech/pengwyn/yocto/build/conf* and open the local.conf file with your preferred editor.
 
  2. Modify **IMAGE_INSTALL_append** variable value adding **kernel-modules** like in the following example:
 
-::
+.. raw:: html
 
- IMAGE_INSTALL_append = " tcf-agent dgbserver kernel-modules"
+ <div>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'poky_rst-host-84' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="poky_rst-host-84" class="language-markup">IMAGE_INSTALL_append = " tcf-agent dgbserver kernel-modules"</code></pre>
+ <script src="_static/prism.js"></script>
+ <script src="_static/select_text.js"></script>
+ </div>
 
 In this way the modules dependencies will be resolved at build time and the kernel modules will be installed in the file system.

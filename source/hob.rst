@@ -3,13 +3,19 @@
 How to use HOB
 ==============
 
-HOB is a graphical interface for bitbake. To run it, :ref:`prepare the environment <prepareEnvironment>` than run **run_hob** command or click icon from desktop,
+HOB is a graphical interface for bitbake. To run it, :ref:`prepare the environment <prepareEnvironment>` than run **hob** command or launch Hob using Architech Splashscreen just click on **Run hob**.,
 
-.. image:: _static/run_hob.png
+.. image:: _static/run_hob.jpg
+
+.. warning::
+
+    | Internet connection required.
+    | At the first launch of Hob it takes some time before appears.
+
 
 HOB window will appear.
 
-.. image:: _static/hob-welcome.png
+.. image:: _static/hob-welcome.jpg
 
 .. _hobSpeedup:
 
@@ -20,7 +26,7 @@ When you imported the virtual machine you might have changed the number of proce
 
 * Click on **Settings**, a new window will appear. Select on **Build environment** tab.
 
-.. image:: _static/hob-parallelism.png
+.. image:: _static/hob-parallelism.jpg
 
 * Change **BB number threads** value from 2 to *<number of processors used by the virtual machine> * 2*, set **Parallel make** to the same value. Click on save.
 
@@ -38,7 +44,7 @@ It is possible to choose between the following formats:
 
 by clicking on **Settings** →  **Output**
 
-.. image:: _static/hob-package-manager.png
+.. image:: _static/hob-package-manager.jpg
 
 choosing your preferred package format, and saving.
 
@@ -48,19 +54,19 @@ How to build a predefined image
 
 Select **pengwyn** from the combo-box, after the recipes have been parsed the section **Select a base image** will appear and you can choose your preferred image. 
 
-.. image:: _static/hob-image-selection.png
+.. image:: _static/hob-image-selection.jpg
 
 Click on **Build image**
 
-.. image:: _static/hob-build-predefined-image.png
+.. image:: _static/hob-build-predefined-image.jpg
 
 than the build process will start.
 
-.. image:: _static/hob-building-predefined-image.png
+.. image:: _static/hob-building-predefined-image.jpg
 
 Please note that the build process can last several hours till it finishes.
 
-.. image:: _static/hob-predefined-image-build-completed.png
+.. image:: _static/hob-predefined-image-build-completed.jpg
 
 It might happen that a fetch task gives an error, if so, double check that the virtual machine has a proper network configuration. If the network configuration has been proved correct, the error might mean that the needed server is down for some reason, in that case the only option you have is to wait and try again later.
 

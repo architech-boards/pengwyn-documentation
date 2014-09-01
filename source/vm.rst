@@ -1,97 +1,176 @@
 Installing the Virtual Machine
 ==============================
 
-The development environment is provided as a Virtual Machine image. 
+The development environment is provided as a virtual disk (to be used by a VirtualBox virtual machine)
+which you can download from this page:
 
-To be able to use it, you first need to install VirtualBox. The version must be the **4.2.10** (with newer versions there is a problem with import).  
+.. important::
 
-.. image:: _static/virtualboxlogo.png
+ http://downloads.architechboards.com/sdk/virtual_machine/download.html
+
+.. important::
+
+ Compute the MD5SUM value of the zip file you downloaded and compare it to the golden one you find in the download page.
+
+Uncompress the file, and you will get a *.vdi* file that is our virtual disk image.
+The environment contains the SDK for all the boards provided by Architech, Pengwyn included.
+
+Download VirtualBox
+-------------------
+
+.. image:: _static/vdi_virtualbox_logo.png
    :align: left
 
-Go to:
+For being able to use it, you first need to install **VirtualBox** (version 4.2.10 or higher).
+You can get VirtualBox installer from here:
 
 https://www.virtualbox.org/wiki/Downloads
 
-and download the version that suits your host operating system. You need to download and install the Extension Pack as well.
+Download the version that suits your host operating system. You need to download and install the **Extension Pack** as well.
 
 .. important::
-   Make sure that the extension pack has the same version of VirtualBox.
+ Make sure that the extension pack has the same version of VirtualBox.
 
-Install the software with all the default options.
+Install the software with all the default options. 
 
-Launch the program and follow these steps: 
+Create a new Virtual Machine
+----------------------------
 
-.. tip::
-   If you are using Linux, double click directly on the .ova file from your file explorer, there will appear a window so click import button.
-   
-   .. image:: _static/importova.png
-   
-   Jump to step 3.
+1. Run VirtualBox
 
-1. From the menu: *File → Import Appliance*
+.. image:: _static/vdi_open_virtualbox.png
+    :align: center
 
-.. image:: /_static/importAppliance.png
+2. Click on *New* button
 
-2. Click on “Open appliance…” button and select the .ova file “PengwynYocto-beta-2013-03-19.ova”.
+.. image:: _static/vdi_new_virtual_machine.png
+    :align: center
 
-3. After opening the appliance, click on “Shared Folders” and select a folder to share with your host operating system. When edit shard folder select **Auto-mount** check box.
+3. Select the name of the virtual machine and the operating system type
 
-.. image:: /_static/vbSharedFolders.png
+.. image:: _static/vdi_virtual_machine_name.png
+    :align: center
 
-4. The ethernet card must be attached to the LAN, not to the WLAN (to make some test you will connect the Pengwyn board to the PC with an ethernet point-to-point connection). To set the correct card, go to menu "machine -> Settings".
-   Click on "Network" tab and select your LAN card. Double check also that the field "Attached to" is set to "Bridged Adapter".
-   If you want to improve the performances of the virtual machine, please read :ref:`cpuRam`.
-   Click on button "Ok" to apply your choices when you are done.
+4. Select the amount of memory you want to give to your new virtual machine
 
-.. image:: /_static/ivs2.png
+.. image:: _static/vdi_virtual_machine_memory.png
+    :align: center
 
-.. important::
-   The sudo password is **pengwyn**
+5. Make the virtual machine use Architech's virtual disk by pointing to the downloaded file. Than click on *Create*.
 
-5. Click the icon "Start" button on the toolbar.
+.. image:: _static/vdi_hard_drive.png
+    :align: center
 
-.. image:: /_static/vbStart.png
+Setup the network
+-----------------
 
-How to configure the network on the virtual machine
----------------------------------------------------
+We need to setup a port forwarding rule to let you (later) use the virtual machine as a local repository of packages.
 
-Another important thing to do is to set the IP address of the virtual machine as static. To do this follow the next steps inside the virtual machine:
+.. note::
 
-1. Right-click on network connection icon. Select *Edit Connections...*.
+ The virtual machine must be off
 
-.. image:: /_static/ip-1.png
+1. Select Architech's virtual machine from the list of virtual machines
 
-2. In *Wired" tab, select "Auto eth0" and press *Edit...* button.
+.. image:: _static/vdi_machine_listed.png
+    :align: center
 
-.. image:: /_static/auto-eth0.png
+2. Click on *Settings*
 
-3. Click to *IPv4 Settings*, press on *Add* button and insert the following address:
+.. image:: _static/vdi_click_settings.png
+    :align: center
 
-* *Address*: 192.168.0.20
+3. Select *Network*
 
-* *Netmask*: 255.255.255.0
+.. image:: _static/vdi_network.png
+    :align: center
 
-* *Gateway*: none
+4. Expand *Advanced* of *Adapter 1*
 
-.. image:: /_static/edit-connection.png
+.. image:: _static/vdi_network_nat_advanced.png
+    :align: center
 
-4. Click on Apply.
+5.  Click on *Port Forwarding*
 
-.. _cpuRam:
+.. image:: _static/vdi_network_nat_port_forwarding.png
+    :align: center
 
-How to setup the number of CPUs and the amount of RAM used by your virtual machine
-----------------------------------------------------------------------------------
+6. Add a new *rule*
 
-You can configure the system settings of the virtual machine. This is possible only if the virtual machine is off. First, select the Yocto based SDK virtual machine from the list of virtual machines, click on the  *Settings* icon in the *Oracle VM VirtualBox Manager* window:
+.. image:: _static/vdi_network_nat_port_forwarding_rule_add.png
+    :align: center
 
-.. image:: /_static/setvm-1.png
+7. Configure the *rule*
 
-In the left menu, click on *System*. In the *Motherboard* tab you can select how much **RAM** you want to assign to the vm.
+.. image:: _static/vdi_network_nat_port_forwarding_rule_added.png
+    :align: center
 
-.. image:: /_static/setvm-2.png
+8. Click on *Ok*
 
-Select *Processor* tab to select how many **CPUs** you want to assign to the virtual machine:
+Customize the number of processors
+----------------------------------
 
-.. image:: /_static/setvm-3.png
+Building an entire system from the ground up is a business that can take up to several hours.
+To improve the performances of the overall build process, you can, if your computer has enough resources, assign more than one
+processor to the virtual machine.
+
+.. note::
+
+ The virtual machine must be off
+
+1. Select Architech's virtual machine from the list of virtual machines
+
+.. image:: _static/vdi_machine_listed.png
+    :align: center
+
+2. Click on *Settings*
+
+.. image:: _static/vdi_click_settings.png
+    :align: center
+
+3. Select *System*
+
+4. Select *Processor*
+
+5. Assign the number of processors you wish to assign to the virtual machine
+
+.. image:: _static/vdi_change_number_of_processors.png
+    :align: center
 
 If you changed the number of processors, you might want to consider reading the guides on how to speedup the build process for :ref:`Poky <pokySpeedup>` and :ref:`HOB <hobSpeedup>`.
+
+Create a shared folder
+----------------------
+
+A shared folder is way for host and guest operating systems to exchange files by means of the file system.
+You need to choose a directory on your host operating system to share with the guest operating system.
+
+.. note::
+
+ The virtual machine must be off
+
+1. Select Architech's virtual machine from the list of virtual machines
+
+.. image:: _static/vdi_machine_listed.png
+    :align: center
+
+2. Click on *Settings*
+
+.. image:: _static/vdi_click_settings.png
+    :align: center
+
+3. Select *Shared Folders*
+
+4. Add a new shared folder
+
+.. image:: _static/vdi_add_shared_folder.png
+    :align: center
+
+5. Choose a directory to share on your host machine. Make sure *Auto-mount* is selected.
+
+.. image:: _static/vdi_new_shared_folder.png
+    :align: center
+
+Once the virtual machine has been booted, the shared folder will be mounted under */media/* directory inside the virtual machine.
+
+
