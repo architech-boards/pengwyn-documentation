@@ -30,8 +30,8 @@ Qt Creator
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-host-221' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-host-221" class="language-markup">/home/architech/architech_sdk/architech/pengwyn/sysroot
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-host-171' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-host-171" class="language-markup">/home/architech/architech_sdk/architech/pengwyn/sysroot
  sudo tar -zxf /home/architech/architech_sdk/architech/pengwyn/yocto/build/tmp/deploy/images/pengwyn/qt4e-demo-image-pengwyn.tar.gz -C /home/architech/architech_sdk/architech/pengwyn/sysroot/</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
@@ -42,8 +42,8 @@ Qt Creator
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-host-222' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-host-222" class="language-markup">sudo mkdir -p /path/to/target/usr/local/Trolltech/Pengwyn/
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-host-172' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-host-172" class="language-markup">sudo mkdir -p /path/to/target/usr/local/Trolltech/Pengwyn/
  sudo cp -r /usr/local/Trolltech/Pengwyn/* /path/to/target/usr/local/Trolltech/Pengwyn/</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
@@ -54,8 +54,8 @@ Qt Creator
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-host-223' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-host-223" class="language-markup">sudo mkdir -p ~/architech_sdk/architech/pengwyn/sysroot/usr/local/Trolltech/Pengwyn/
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-host-173' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-host-173" class="language-markup">sudo mkdir -p ~/architech_sdk/architech/pengwyn/sysroot/usr/local/Trolltech/Pengwyn/
  sudo cp -r /usr/local/Trolltech/Pengwyn/* ~/architech_sdk/architech/pengwyn/sysroot/usr/local/Trolltech/Pengwyn/
  sudo cp -r /home/architech/architech_sdk/architech/pengwyn/toolchain/sysroots/cortexa8t2hf-vfp-neon-poky-linux-gnueabi/* /home/architech/architech_sdk/architech/pengwyn/sysroot/</code></pre>
  <script src="_static/prism.js"></script>
@@ -73,8 +73,8 @@ If you based your root file system on *qt4e-demo-image*, be sure you execute thi
 .. raw:: html
 
  <div>
- <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-board-311' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-board-311" class="language-markup">/etc/init.d/qtdemo stop</code></pre>
+ <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-board-291' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-board-291" class="language-markup">/etc/init.d/qtdemo stop</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -109,7 +109,7 @@ To create the project follow these steps:
 .. image:: _static/qt-project-name.jpg
 	   :align: center
 
-3. Check also *pengwyn* kit and continue to press *next* button to finish the creation of the project.
+3. Check also *Pengwyn* kit and continue to press *next* button to finish the creation of the project.
 
 .. image:: _static/qt-project-kits.jpg
 	   :align: center
@@ -158,8 +158,8 @@ Debug Hello World project
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-host-224' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-host-224" class="language-markup">scp /home/architech/architech_sdk/architech/pengwyn/workspace/qt/build-QtHelloWorld-pengwyn-Debug/QtHelloWorld root@192.168.0.10:/home/root</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-host-174' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-host-174" class="language-markup">scp /home/architech/architech_sdk/architech/pengwyn/workspace/qt/build-QtHelloWorld-pengwyn-Debug/QtHelloWorld root@192.168.0.10:/home/root</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -169,8 +169,8 @@ Debug Hello World project
 .. raw:: html
 
  <div>
- <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-board-312' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-board-312" class="language-markup">gdbserver :10000 QtHelloWorld -qws</code></pre>
+ <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-board-292' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-board-292" class="language-markup">gdbserver :10000 QtHelloWorld -qws</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -193,8 +193,8 @@ Debug Hello World project
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-host-225' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-host-225" class="language-markup">/home/architech/architech_sdk/architech/pengwyn/workspace/qt/build-QtHelloWorld-pengwyn-Debug/QtHelloWorld</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_creator_rst-host-175' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_creator_rst-host-175" class="language-markup">/home/architech/architech_sdk/architech/pengwyn/workspace/qt/build-QtHelloWorld-pengwyn-Debug/QtHelloWorld</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>

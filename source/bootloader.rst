@@ -17,8 +17,8 @@ Anyway, we will assume in this guide that u-boot sources will be copied to:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-91' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-91" class="language-markup">/home/architech/Documents/u-boot</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-71' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-71" class="language-markup">/home/architech/Documents/u-boot</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -40,8 +40,8 @@ about is this one:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-92' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-92" class="language-markup">/home/architech/architech_sdk/architech/pengwyn/yocto/build/tmp/work/pengwyn-poky-linux-gnueabi/u-boot-ti-staging/2014.07-r7+gitrAUTOINC+7e537bfdd2/git/</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-72' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-72" class="language-markup">/home/architech/architech_sdk/architech/pengwyn/yocto/build/tmp/work/pengwyn-poky-linux-gnueabi/u-boot-ti-staging/2014.07-r7+gitrAUTOINC+7e537bfdd2/git/</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -51,8 +51,8 @@ Replace:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-93' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-93" class="language-markup">/home/architech/architech_sdk/architech/pengwyn/yocto/build/</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-73' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-73" class="language-markup">/home/architech/architech_sdk/architech/pengwyn/yocto/build/</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -68,8 +68,8 @@ Pengwyn board uses U-Boot version 2014.07, which can be downloaded from:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-94' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-94" class="language-markup">cd /home/architech/Documents
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-74' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-74" class="language-markup">cd /home/architech/Documents
  git clone -b ti-u-boot-2014.07 git://git.ti.com/ti-u-boot/ti-u-boot.git
  mv ti-u-boot u-boot
  cd u-boot
@@ -86,8 +86,8 @@ Patches are in the Yocto meta-layer **meta-pengwyn**. You can use them right awa
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-95' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-95" class="language-markup">patch -p1 -d /home/architech/Documents/u-boot/ &lt; /home/architech/architech_sdk/architech/pengwyn/yocto/meta-pengwyn/recipes-bsp/u-boot/u-boot-ti-staging-2014.07/0001-pengwyn.patch</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-75' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-75" class="language-markup">patch -p1 -d /home/architech/Documents/u-boot/ &lt; /home/architech/architech_sdk/architech/pengwyn/yocto/meta-pengwyn/recipes-bsp/u-boot/u-boot-ti-staging-2014.07/0001-pengwyn.patch</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -97,8 +97,8 @@ However, if you are not working with the official SDK the most general solution 
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-96' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-96" class="language-markup">cd /home/architech/Documents
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-76' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-76" class="language-markup">cd /home/architech/Documents
  git clone -b dizzy https://github.com/architech-boards/meta-pengwyn.git
  patch -p1 -d /home/architech/Documents/u-boot &lt; /home/architech/Documents/meta-pengwyn/recipes-bsp/u-boot/u-boot-ti-staging-2014.07/0001-pengwyn.patch</code></pre>
  <script src="_static/prism.js"></script>
@@ -110,8 +110,8 @@ Configuration and board files for Pengwyn board are in:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-97' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-97" class="language-markup">/home/architech/Documents/u-boot/board/ti/am335x/*
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-77' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-77" class="language-markup">/home/architech/Documents/u-boot/board/ti/am335x/*
  /home/architech/Documents/u-boot/include/configs/pengwyn.h</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
@@ -123,8 +123,8 @@ need a cross-toolchain. To use it to compile the bootloader or the operating sys
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-98' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-98" class="language-markup">source /home/architech/architech_sdk/architech/pengwyn/toolchain/environment-nofs</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-78' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-78" class="language-markup">source /home/architech/architech_sdk/architech/pengwyn/toolchain/environment-nofs</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -134,8 +134,8 @@ then you can run these commands to compile it:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-99' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-99" class="language-markup">cd /home/architech/Documents/u-boot/
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bootloader_rst-host-79' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="bootloader_rst-host-79" class="language-markup">cd /home/architech/Documents/u-boot/
  make pengwyn_config
  make -j &lt;2 * number of processor's cores&gt; pengwyn</code></pre>
  <script src="_static/prism.js"></script>

@@ -11,8 +11,8 @@ You can get it with *git*:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'meta_layer_rst-host-191' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="meta_layer_rst-host-191" class="language-markup">git clone -b dizzy https://github.com/architech-boards/meta-pengwyn.git</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'meta_layer_rst-host-81' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="meta_layer_rst-host-81" class="language-markup">git clone -b dizzy https://github.com/architech-boards/meta-pengwyn.git</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -24,8 +24,8 @@ The strictly BSP related recipes are located under:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'meta_layer_rst-host-192' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="meta_layer_rst-host-192" class="language-markup">meta-pengwyn/recipes-bsp/u-boot/
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'meta_layer_rst-host-82' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="meta_layer_rst-host-82" class="language-markup">meta-pengwyn/recipes-bsp/u-boot/
  meta-pengwyn/recipes-bsp/flash/
  meta-pengwyn/recipes-kernel/linux/</code></pre>
  <script src="_static/prism.js"></script>
@@ -53,8 +53,8 @@ him to setup the file system. For more information just run:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'meta_layer_rst-host-193' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="meta_layer_rst-host-193" class="language-markup">pengwyn_to_flash -h</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'meta_layer_rst-host-83' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="meta_layer_rst-host-83" class="language-markup">pengwyn_to_flash -h</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -72,8 +72,8 @@ to your *local.conf* file
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'meta_layer_rst-host-194' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="meta_layer_rst-host-194" class="language-markup">IMAGE_INSTALL_append = " pengwyn-flash-utils"</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'meta_layer_rst-host-84' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="meta_layer_rst-host-84" class="language-markup">IMAGE_INSTALL_append = " pengwyn-flash-utils"</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>

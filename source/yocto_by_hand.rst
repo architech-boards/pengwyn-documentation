@@ -16,8 +16,8 @@ The following steps are necessary for a clean installation:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-51' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-51" class="language-markup">mkdir -p ~/bin
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-41' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-41" class="language-markup">mkdir -p ~/bin
  sudo apt-get install curl
  curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
  chmod a+x ~/bin/repo</code></pre>
@@ -30,8 +30,8 @@ The following steps are necessary for a clean installation:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-52' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-52" class="language-markup">echo $PATH</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-42' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-42" class="language-markup">echo $PATH</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -41,8 +41,8 @@ The following steps are necessary for a clean installation:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-53' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-53" class="language-markup">export PATH="$PATH:${HOME}/bin"</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-43' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-43" class="language-markup">export PATH="$PATH:${HOME}/bin"</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -56,8 +56,8 @@ The following steps are necessary for a clean installation:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-54' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-54" class="language-markup">repo init -u https://github.com/architech-boards/pengwyn-manifest.git -b dizzy -m manifest.xml</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-44' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-44" class="language-markup">repo init -u https://github.com/architech-boards/pengwyn-manifest.git -b dizzy -m manifest.xml</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -67,8 +67,8 @@ The following steps are necessary for a clean installation:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-55' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-55" class="language-markup">repo sync</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-45' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-45" class="language-markup">repo sync</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -91,8 +91,8 @@ When you want your local repositories to be updated, just:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-56' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-56" class="language-markup">repo sync</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-46' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-46" class="language-markup">repo sync</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -105,8 +105,8 @@ If you really want to download everything by hand, just clone branch *dizzy* of 
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-57' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-57" class="language-markup">git clone -b dizzy https://github.com/architech-boards/meta-pengwyn.git</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'yocto_by_hand_rst-host-47' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="yocto_by_hand_rst-host-47" class="language-markup">git clone -b dizzy https://github.com/architech-boards/meta-pengwyn.git</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>

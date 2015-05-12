@@ -9,8 +9,8 @@ Get them from *Bitbake* build directory (if you built the kernel with it) or get
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-181' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-181" class="language-markup">/path/to/build/tmp/work/pengwyn-poky-linux-gnueabi/sitara-linux-ti-staging/3.14.26-r22g+gitrAUTOINC+2489c022b2/git</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-121' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-121" class="language-markup">/path/to/build/tmp/work/pengwyn-poky-linux-gnueabi/sitara-linux-ti-staging/3.14.26-r22g+gitrAUTOINC+2489c022b2/git</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -21,8 +21,8 @@ If you are working with the virtual machine, you will find them under directory:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-182' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-182" class="language-markup">/home/architech/architech_sdk/architech/pengwyn/yocto/build/tmp/work/pengwyn-poky-linux-gnueabi/sitara-linux-ti-staging/3.14.26-r22g+gitrAUTOINC++XXX/git</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-122' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-122" class="language-markup">/home/architech/architech_sdk/architech/pengwyn/yocto/build/tmp/work/pengwyn-poky-linux-gnueabi/sitara-linux-ti-staging/3.14.26-r22g+gitrAUTOINC++XXX/git</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -36,8 +36,8 @@ always get them from the Internet by cloning the proper repository and checking 
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-183' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-183" class="language-markup">cd ~/Documents
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-123' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-123" class="language-markup">cd ~/Documents
  git clone -b sitara-ti-linux-3.14.y git://git.ti.com/sitara-linux/sitara-linux.git
  cd sitara-linux
  git checkout 2489c022b2932432606f897741a71b712e6dbe77</code></pre>
@@ -51,8 +51,8 @@ and by properly patching the sources:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-184' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-184" class="language-markup">cd ~/Documents
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-124' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-124" class="language-markup">cd ~/Documents
  patch -p1 -d sitara-linux/ &lt; /home/architech/architech_sdk/architech/pengwyn/yocto/meta-pengwyn/recipes-kernel/linux/sitara-linux-ti-staging-3.14.26/0002-pengwyn.patch
  cp /home/architech/architech_sdk/architech/pengwyn/yocto/meta-pengwyn/recipes-kernel/linux/sitara-linux-ti-staging-3.14.26/defconfig ~/Documents/sitara-linux/arch/arm/configs/pengwyn_defconfig</code></pre>
  <script src="_static/prism.js"></script>
@@ -64,8 +64,8 @@ However, if you are not working with the official SDK the most general solution 
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-185' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-185" class="language-markup">cd ~/Documents
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-125' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-125" class="language-markup">cd ~/Documents
  git clone -b dizzy https://github.com/architech-boards/meta-pengwyn.git
  git clone git://git.yoctoproject.org/meta-ti.git
  cd meta-ti
@@ -82,8 +82,8 @@ Now that you have the sources, you can start browsing the code from the followin
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-186' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-186" class="language-markup">~/Documents/sitara-linux/arch/arm/boot/dts/pengwyn-common.dtsi
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-126' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-126" class="language-markup">~/Documents/sitara-linux/arch/arm/boot/dts/pengwyn-common.dtsi
  ~/Documents/sitara-linux/arch/arm/boot/dts/pengwyn-dvi.dts
  ~/Documents/sitara-linux/arch/arm/boot/dts/pengwyn-touch.dts</code></pre>
  <script src="_static/prism.js"></script>
@@ -95,8 +95,8 @@ For build the kernel source the script to load the proper environment for the cr
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-187' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-187" class="language-markup">source /home/architech/architech_sdk/architech/pengwyn/toolchain/environment-nofs</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-127' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-127" class="language-markup">source /home/architech/architech_sdk/architech/pengwyn/toolchain/environment-nofs</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -104,8 +104,8 @@ For build the kernel source the script to load the proper environment for the cr
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-188' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-188" class="language-markup">cd ~/Documents/sitara-linux
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-128' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-128" class="language-markup">cd ~/Documents/sitara-linux
  make pengwyn_defconfig
  make menuconfig</code></pre>
  <script src="_static/prism.js"></script>
@@ -117,8 +117,8 @@ and to compile it:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-189' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-189" class="language-markup">make -j &lt;2 * number of processor's cores&gt; uImage</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-129' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-129" class="language-markup">make -j &lt;2 * number of processor's cores&gt; uImage</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -133,8 +133,8 @@ Once the kernel is compiled, the last build to do is the dtb file. This file per
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-1810' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-1810" class="language-markup">make pengwn-touch.dtb</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-1210' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-1210" class="language-markup">make pengwn-touch.dtb</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -144,8 +144,8 @@ or
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-1811' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-1811" class="language-markup">make pengwyn-dvi.dtb</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'kernel_rst-host-1211' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="kernel_rst-host-1211" class="language-markup">make pengwyn-dvi.dtb</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>

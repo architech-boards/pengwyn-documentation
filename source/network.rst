@@ -7,8 +7,8 @@ Under Linux, instead, the default network configuration is:
 .. raw:: html
 
  <div>
- <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'network_rst-board-291' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="network_rst-board-291" class="language-markup">root@pengwyn:~# ifconfig
+ <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'network_rst-board-251' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="network_rst-board-251" class="language-markup">root@pengwyn:~# ifconfig
  eth0    Link encap:Ethernet  HWaddr 00:18:30:FD:2D:7E
          UP BROADCAST MULTICAST  MTU:1500  Metric:1
          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
@@ -35,8 +35,8 @@ you could add the following lines:
 .. raw:: html
 
  <div>
- <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'network_rst-board-292' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="network_rst-board-292" class="language-markup">auto eth0
+ <div><b class="admonition-board">&nbsp;&nbsp;Board&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'network_rst-board-252' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="network_rst-board-252" class="language-markup">auto eth0
  iface eth0 inet static
      address 192.168.0.10
      netmask 255.255.255.0

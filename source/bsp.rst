@@ -19,8 +19,8 @@ The most frequent way of customization of the Linux Kernel is to change the .con
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bsp_rst-host-141' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="bsp_rst-host-141" class="language-markup">bitbake virtual/kernel -c cleanall
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bsp_rst-host-191' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="bsp_rst-host-191" class="language-markup">bitbake virtual/kernel -c cleanall
  bitbake virtual/kernel -c menuconfig</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
@@ -35,8 +35,8 @@ follow the instructions, save and exit, than you ready to generate your preferre
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bsp_rst-host-142' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="bsp_rst-host-142" class="language-markup">bitbake virtual/kernel</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'bsp_rst-host-192' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="bsp_rst-host-192" class="language-markup">bitbake virtual/kernel</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>

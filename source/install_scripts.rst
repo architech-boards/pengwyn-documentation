@@ -18,8 +18,8 @@ you need to download and run a system wide installation script:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'install_scripts_rst-host-121' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="install_scripts_rst-host-121" class="language-markup">git clone -b dizzy https://github.com/architech-boards/machine_installer.git
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'install_scripts_rst-host-211' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="install_scripts_rst-host-211" class="language-markup">git clone -b dizzy https://github.com/architech-boards/machine_installer.git
  cd machine_installer
  ./machine_install -g -p</code></pre>
  <script src="_static/prism.js"></script>
@@ -44,8 +44,8 @@ of tools related to Pengwyn:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'install_scripts_rst-host-122' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="install_scripts_rst-host-122" class="language-markup">git clone -b dizzy https://github.com/architech-boards/pengwyn-splashscreen.git
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'install_scripts_rst-host-212' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="install_scripts_rst-host-212" class="language-markup">git clone -b dizzy https://github.com/architech-boards/pengwyn-splashscreen.git
  cd pengwyn-splashscreen
  ./run_install</code></pre>
  <script src="_static/prism.js"></script>

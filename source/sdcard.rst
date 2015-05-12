@@ -23,8 +23,8 @@ Ensure that the following is available:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-231' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-231" class="language-markup">mkdir -p /home/architech/Desktop/pengwyn-tools
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-111' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-111" class="language-markup">mkdir -p /home/architech/Desktop/pengwyn-tools
  tar -jxf pengwyn-tools-dizzy.tar.bz2 -C /home/architech/Desktop/pengwyn-tools</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
@@ -37,8 +37,8 @@ Ensure that the following is available:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-232' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-232" class="language-markup">cd /home/architech/Desktop/pengwyn-tools
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-112' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-112" class="language-markup">cd /home/architech/Desktop/pengwyn-tools
  sudo ./fast-create-sdcard.sh</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
@@ -63,8 +63,8 @@ How to build the SD card
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-233' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-233" class="language-markup">sudo fdisk -l
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-113' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-113" class="language-markup">sudo fdisk -l
  
  Disk /dev/sdb: 1971 MB, 1971322880 bytes
  255 heads, 63 sectors/track, 239 cylinders
@@ -87,8 +87,8 @@ How to build the SD card
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-234' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-234" class="language-markup">sudo ./fast-create-sdcard.sh</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-114' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-114" class="language-markup">sudo ./fast-create-sdcard.sh</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -99,8 +99,8 @@ How to build the SD card
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-235' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-235" class="language-markup">+------------------------------------------------------------------------------+
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-115' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-115" class="language-markup">+------------------------------------------------------------------------------+
  |                                                                              |
  | This script will create a bootable SD card.                                  |
  | The script must be run with root permissions.                                |
@@ -126,8 +126,8 @@ How to build the SD card
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-236' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-236" class="language-markup">+------------------------------------------------------------------------------+
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'sdcard_rst-host-116' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="sdcard_rst-host-116" class="language-markup">+------------------------------------------------------------------------------+
  |                                                                              |
  | This script will create a bootable SD card.                                  |
  | The script must be run with root permissions.                                |

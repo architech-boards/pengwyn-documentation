@@ -21,8 +21,8 @@ the name of the device is by looking to the kernel messages, so:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-111' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-111" class="language-markup">sudo dmesg -c</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-221' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-221" class="language-markup">sudo dmesg -c</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -34,8 +34,8 @@ the name of the device is by looking to the kernel messages, so:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-112' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-112" class="language-markup">dmesg</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-222' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-222" class="language-markup">dmesg</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -45,8 +45,8 @@ the name of the device is by looking to the kernel messages, so:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-113' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-113" class="language-markup">[ 2614.290675] usb 3-4: &gt;new full-speed USB device number 4 using xhci_hcd
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-223' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-223" class="language-markup">[ 2614.290675] usb 3-4: &gt;new full-speed USB device number 4 using xhci_hcd
  [ 2614.313854] usb 3-4: &gt;New USB device found, idVendor=0403, idProduct=6015
  [ 2614.313861] usb 3-4: &gt;New USB device strings: Mfr=1, Product=2, SerialNumber=3
  [ 2614.313865] usb 3-4: &gt;Product: FT230X Basic UART
@@ -77,8 +77,8 @@ Now that you know the device name, run minicom:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-114' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-114" class="language-markup">sudo minicom -ws</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-224' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-224" class="language-markup">sudo minicom -ws</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -88,8 +88,8 @@ If minicom is not installed, you can install it with:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-115' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-115" class="language-markup">sudo apt-get install minicom</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-225' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-225" class="language-markup">sudo apt-get install minicom</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -99,8 +99,8 @@ then you can setup your port with these parameters:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-116' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-116" class="language-markup">+-----------------------------------------------------------------------+
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'serial_console_rst-host-226' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="serial_console_rst-host-226" class="language-markup">+-----------------------------------------------------------------------+
  | A -    Serial Device      : /dev/ttyUSB0                              |
  | B - Lockfile Location     : /var/lock                                 |
  | C -   Callin Program      :                                           |

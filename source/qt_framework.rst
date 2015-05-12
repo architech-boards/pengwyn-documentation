@@ -13,8 +13,8 @@ First of all you need to compile the cross-toolchain with Yocto:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_framework_rst-host-61' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_framework_rst-host-61" class="language-markup">bitbake meta-toolchain-qte</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_framework_rst-host-51' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_framework_rst-host-51" class="language-markup">bitbake meta-toolchain-qte</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -28,8 +28,8 @@ To install the toolchain run the following commands:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_framework_rst-host-62' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_framework_rst-host-62" class="language-markup">sudo ./poky-glibc-i686-meta-toolchain-qte-cortexa8t2hf-vfp-neon-toolchain-qte-1.7.1.sh</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_framework_rst-host-52' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_framework_rst-host-52" class="language-markup">sudo ./poky-glibc-i686-meta-toolchain-qte-cortexa8t2hf-vfp-neon-toolchain-qte-1.7.1.sh</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -39,8 +39,8 @@ The installation script will ask to select an installation path.
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_framework_rst-host-63' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_framework_rst-host-63" class="language-markup">sudo chown -R architech:architech ~/path/to/toolchain/installed</code></pre>
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_framework_rst-host-53' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_framework_rst-host-53" class="language-markup">sudo chown -R architech:architech ~/path/to/toolchain/installed</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
  </div>
@@ -50,8 +50,8 @@ Before to run Qt creator you must set the environment variables:
 .. raw:: html
 
  <div>
- <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_framework_rst-host-64' );">select</a></div>
- <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_framework_rst-host-64" class="language-markup">source /opt/poky/1.7.1/environment-setup-cortexa8t2hf-vfp-neon-poky-linux-gnueabi
+ <div><b class="admonition-host">&nbsp;&nbsp;Host&nbsp;&nbsp;</b>&nbsp;&nbsp;<a style="float: right;" href="javascript:select_text( 'qt_framework_rst-host-54' );">select</a></div>
+ <pre class="line-numbers pre-replacer" data-start="1"><code id="qt_framework_rst-host-54" class="language-markup">source /opt/poky/1.7.1/environment-setup-cortexa8t2hf-vfp-neon-poky-linux-gnueabi
  source /opt/poky/1.7.1/sysroots/i686-pokysdk-linux/environment-setup.d/qtopia.sh</code></pre>
  <script src="_static/prism.js"></script>
  <script src="_static/select_text.js"></script>
