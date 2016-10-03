@@ -7,7 +7,7 @@ Welcome to Pengwyn's documentation!
 ===================================
 
 :Version: 0.0.1A
-:Copyright: Architech
+:Copyright: (C)2016 Avnet Silica company
 :Date: 06/11/13
 
 .. image:: _static/pengwyn.png
