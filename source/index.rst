@@ -3,7 +3,7 @@ Architech's Pengwyn documentation
 *********************************
 
 :Version: 2.0.0A
-:Copyright: Architech
+:Copyright: (C)2016 Avnet Silica company
 :Date: 13/02/2015
 
 .. image:: _static/board.png
